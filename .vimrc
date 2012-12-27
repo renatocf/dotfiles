@@ -56,9 +56,9 @@
 "++ CONFIGURAÇÕES PARA LINGUAGES DE PROGRAMAÇÃO ++++++++++++++++++++++++
 	source $HOME/.vim/ftplugin/c.vim
 	source $HOME/.vim/ftplugin/c++.vim
- 	source $HOME/.vim/ftplugin/java.vim
+	source $HOME/.vim/ftplugin/java.vim
 	source $HOME/.vim/ftplugin/perl.vim
- 	source $HOME/.vim/ftplugin/python.vim
+	source $HOME/.vim/ftplugin/python.vim
 
 
 "///////////////////////////////////////////////////////////////////////
@@ -86,13 +86,13 @@ iab _TENSORIAL_		⊗
 iab _SOMA_DIRETA_	⊕
 
 "---- LÓGICA
-iab _PARA_TODO_ 	∀
-iab _EXISTE_ 		∃
+iab _PARA_TODO_		∀
+iab _EXISTE_		∃
 iab _NAO_			¬
 iab _E_				∧
 iab _OU_			∨
-iab _PORTANTO_ 		∴
-iab _PORQUE_ 		∵
+iab _PORTANTO_		∴
+iab _PORQUE_		∵
 iab _IMPLICA_		→
 iab _SE_SO_SE_		↔
 
@@ -110,7 +110,7 @@ iab _INFINITO_		∞
 iab _DIFERENCIAL_	∂
 iab _GRADIENTE_		∇
 iab _INTEGRAL_		∫
-iab _INTEG_LINHA_ 	∮
+iab _INTEG_LINHA_	∮
 iab _SOMATORIO_		∑
 iab _PRODUTORIO_	∏
 
@@ -159,15 +159,15 @@ iab _PROD_INTERNO_	⟨⟩
 "	<C-S-TAB>:	(I) Dá sequência a uma palavra
 "	<C-D>:		(I) Procura no dicionário
 "
-"	<F3>: (A) 	janela de erros do comando :make
-"	<F4>: (A) 	janela de navegação em pastas
+"	<F3>: (A)	janela de erros do comando :make
+"	<F4>: (A)	janela de navegação em pastas
 "	<F5>: (A/I) troca de buffers (para múltiplas janelas abertas)
-"	<F6>: (A) 	esconde/revela os comentários
-"	<F7>: (V) 	comenta na forma C-ansi (para .c, .cpp e .java) 
-"		  (V) 	comenta na dorma de Perl (para .pl ou .perl)
-"	<F8>: (v) 	descomenta na forma C-ansi (para .c, .cpp e .java) 
-"		  (V) 	descomenta na dorma de Perl (para .pl ou .perl)
-"	<F9>: (I) 	liga/desliga identação automática
+"	<F6>: (A)	esconde/revela os comentários
+"	<F7>: (V)	comenta na forma C-ansi (para .c, .cpp e .java) 
+"		  (V)	comenta na dorma de Perl (para .pl ou .perl)
+"	<F8>: (v)	descomenta na forma C-ansi (para .c, .cpp e .java) 
+"		  (V)	descomenta na dorma de Perl (para .pl ou .perl)
+"	<F9>: (I)	liga/desliga identação automática
 "	
 "	<S-F7>: (V) comenta na forma C++ (para .cpp e .java)
 "	<S-F8>: (V) descomenta na forma C++ (para .cpp e .java)
@@ -239,7 +239,7 @@ iab _PROD_INTERNO_	⟨⟩
 			let g:hiddcomm=1 | hi Comment ctermfg=black guifg=black
 		else
 			unlet g:hiddcomm | hi Comment ctermfg=cyan  guifg=cyan term=bold
-	  	endif
+		endif
 	endfu
 
 "++ COMENTÁRIOS C-ANSI (/* e */) +++++++++++++++++++++++++++++++++++++++

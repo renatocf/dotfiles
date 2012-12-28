@@ -5,7 +5,6 @@
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
-
 "++ DEBIAN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Esta linha não deve ser removida para garantir que várias 
     " opções estão apropriadamente selecionadas para trabalhar 
@@ -27,15 +26,21 @@
 
 "++ OPÇÕES GERAIS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
     set nu              " Números no início das linhas
+    set background=dark " Fundo escuro (quem usa terminal branco?)
+    set autowrite       " Salva automaticamente antes de :next e :make
     set tabstop=4       " Tamanho real da tabulação com 4 espaços 
     set softtabstop=4   " Tamanho aparente da tabulação com 4 espaços
     set shiftwidth=4    " Identação com 4 espaços de tabulação
-    set expandtab       " Substitui tabulações por espaços (tabulações 
-                        " reais são disponíveis com <C-V><TAB>
-    set textwidth=72    " Tamanho máximo da largura das linhas: 72 
                         " espaços (coisas de cartões perfurados...)
-    set background=dark " Fundo escuro (quem usa terminal branco?)
-    set autowrite       " Salva automaticamente antes de :next e :make
+    
+"++ TABS POR ESPAÇOS +++++++++++++++++++++++++++++++++++++++++++++++++++
+    au BufNewFile,BufRead,Filetype * set expandtab
+        " Troca as tabulações por espaços, para evitar erros na dia-
+        " gramação ao usar o VIM com outros tamanhos de 'tabstop'. 
+        " A opção está com um autocomando porque o VIM não ativa au-
+        " tomaticamente o expandtab pelo .vimrc (o autocomando é equi-
+        " valente a digitar :set expandtab ao entrar em um documento, 
+        " o que também corrige o problema).
 
 "++ PESQUISA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     set diffopt=filler,iwhite   " Ignorar espaços em branco

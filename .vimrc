@@ -25,8 +25,8 @@
     endif
 
 "++ OPÇÕES GERAIS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    set nu              " Números no início das linhas
-    set ruler           " Linhas e colunas no rodapé do Vim
+    set ruler           " Linhas e colunas no rodapé 
+    set number          " Números no início das linhas
     set backspace=2     " Backspace age como em outros programas
     set background=dark " Fundo escuro (quem usa terminal branco?)
     set autowrite       " Salva automaticamente antes de :next e :make

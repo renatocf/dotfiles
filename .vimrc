@@ -4,7 +4,6 @@
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
 "++ DEBIAN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Esta linha não deve ser removida para garantir que várias 
     " opções estão apropriadamente selecionadas para trabalhar 

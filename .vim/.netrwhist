@@ -1,9 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/renatocf/.vim/after/syntax'
-let g:netrw_dirhist_2='/usr/share/vim/vim73/doc'
-let g:netrw_dirhist_3='/home/renatocf/Documentos/2o_Semestre/MAC0122/MAC0122-EP5'
-let g:netrw_dirhist_4='/home/renatocf/.vim'
-let g:netrw_dirhist_5='/home/renatocf/.vim/autoload'
-let g:netrw_dirhist_6='/home/renatocf/.vim'
-let g:netrw_dirhist_7='/home/renatocf'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/usr/local/share/vim/vim73/spell'
+let g:netrw_dirhist_2='/usr/local/share/vim/vim73/print'
+let g:netrw_dirhist_3='/usr/local/share/vim/vim73/lang'
+let g:netrw_dirhist_4='/usr/local/share/vim/vim73/lang/pt_BR'
+let g:netrw_dirhist_5='/usr/local/share/vim/vim73/lang'

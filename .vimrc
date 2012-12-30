@@ -5,6 +5,10 @@
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 
+
+
+
+
 "++ DEBIAN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Esta linha não deve ser removida para garantir que várias 
     " opções estão apropriadamente selecionadas para trabalhar 
@@ -26,6 +30,8 @@
 
 "++ OPÇÕES GERAIS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
     set nu              " Números no início das linhas
+    set ruler           " Linhas e colunas no rodapé do Vim
+    set backspace=2     " Backspace age como em outros programas
     set background=dark " Fundo escuro (quem usa terminal branco?)
     set autowrite       " Salva automaticamente antes de :next e :make
     set tabstop=4       " Tamanho real da tabulação com 4 espaços 
@@ -33,6 +39,20 @@
     set shiftwidth=4    " Identação com 4 espaços de tabulação
                         " espaços (coisas de cartões perfurados...)
     
+"++ PADRÃO DE CARACTERES +++++++++++++++++++++++++++++++++++++++++++++++
+    set encoding=utf-8
+    set fileencoding=utf-8
+    	" Mude o padrão do código dos caracteres utilizados no Vim. Em
+    	" geral, utf-8 (Unicode Transfer Format 8) consegue exibir a 
+    	" maioria das línguas. É importante, porém, checar se a opção 
+    	" +multi_byte está disponível ao digitar :version dentro do Vim.
+    	" Se esta opção estiver indisponível ('-multi_byte'), recompile
+    	" a partir do código (./configure --enable-multibyte)
+    if has("multi_byte")
+        set termencoding=utf-8
+        " Permite que emuladores xterm mostrem caracteres utf-8.
+    endif
+
 "++ TABS POR ESPAÇOS +++++++++++++++++++++++++++++++++++++++++++++++++++
     au BufNewFile,BufRead,Filetype * set expandtab
         " Troca as tabulações por espaços, para evitar erros na dia-
@@ -179,7 +199,11 @@ iab _PROD_INTERNO_  ⟨⟩
 
 
 "++ COPIAR PARA FORA DO VIM 
-    vnoremap <c-insert> "+y
+    "vnoremap <c-insert> "+y
+"if has('gui-running')
+"    map  <s-insert> <MiddleMouse>
+"    map! <s-insert> <MiddleMouse>
+"endif
 
 "++ DICIONÁRIO/ORTOGRAFIA E AUTOCOMPLETAMENTO 
     set dictionary=/home/verde/.ispell_br

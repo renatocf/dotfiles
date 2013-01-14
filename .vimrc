@@ -80,6 +80,8 @@
     source $HOME/.vim/ftplugin/perl.vim
     source $HOME/.vim/ftplugin/python.vim
 
+"++ BIOINFORMÁTICA +++++++++++++++++++++++++++++++++++++++++++++++++++++
+    au BufNewFile,BufRead *.fasta,*.fa  setf fasta
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

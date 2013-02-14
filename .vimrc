@@ -93,34 +93,14 @@
     runtime bundle/vim-pathogen/autoload/pathogen.vim
     call pathogen#infect()
 
-"++ TAGS/COMPLETAMENTO PARA C/C++ ++++++++++++++++++++++++++++++++++++++
-    au BufNewFile,BufRead *.{c,h,cpp,cp,cc,c++,cxx,chh,hh}
-        \ set tags+=$HOME/.vim/tags/gtk+.tags |
-        \ set tags+=$HOME/.vim/tags/stdio.tags |
-        \ set tags+=$HOME/.vim/tags/stdlib.tags | 
-        \ set tags+=$HOME/.vim/tags/string.tags | 
-        \ set tags+=$HOME/.vim/tags/stropts.tags 
-    au BufNewFile,BufRead *.{cpp,cp,cc,c++,cxx,chh,hh}
-        \ set tags+=$HOME/.vim/tags/cpp.tags 
-    
-    let OmniCpp_ShowAccess = 1 " +, - e # no menu popup
-    let OmniCpp_MayCompleteDot   = 1 " Autocompletar com .
-    let OmniCpp_MayCompleteArrow = 1 " Autocompletar com ->
-    let OmniCpp_MayCompleteScope = 1 " Autocompletar com ::
-    let OmniCpp_NamespaceSearch  = 2 " Procura nos namespaces
-    let OmniCpp_SelectFirstItem  = 2 " Seleciona primeiro item 
-    let OmniCpp_GlobalScopeSearch = 1 " Procura no âmbito global
-    let OmniCpp_ShowPrototypeInAbbr = 1 "Protótipos das funções
-    let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
-    " Lista de namespaces que não são incluídos com o nome
-    " da função durante o autocompletamento
-        
+"++ JANELA DE POPUP ++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Janela de popup mais completa
     set completeopt=menuone,menu,longest,preview
     " Abre/fecha automaticamente a janela do menu popup
     au InsertLeave  * if pumvisible() == 0 | silent! pclose | endif
     au CursorMovedI * if pumvisible() == 0 | silent! pclose | endif
    
+"++ SUPERTAB +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " SuperTab plugin
     autocmd FileType *
     \   if &omnifunc != ''
@@ -130,10 +110,14 @@
   
     let g:SuperTabMappingTabLiteral = "<leader><tab>"
 
-"++ SINTAXE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+"++ SINTAXE (SYNTASTIC) +++++++++++++++++++++++++++++++++++++++++++++++
     let g:syntastic_mode_map = { 'mode': 'passive' }
-    " Deiva o corretor de sintaxe syntastic funcionar no mod passivo,
+    " Deixa o corretor de sintaxe syntastic funcionar no mod passivo,
     " só podendo sendo processado ao chamar o comando "SyntaxCheck"
+    let g:syntastic_loc_list_height=5
+    " Tamanho da lista de erros do Syntastic
+    let g:syntastic_auto_loc_list=1
+    " Janela de erros abre ao checar, e fecha quando não há mais erros
     
 "++ BIOINFORMÁTICA ++++++++++++++++++++++++++++++++++++++++++++++++++++
     augroup Bioinformatics
@@ -159,70 +143,10 @@
     cab W w | cab Q q | cab Wq wq | cab wQ wq | cab WQ wq
 
 "++ RÉGUA E COMENTÁRIO (TAMANHO 72) ++++++++++++++++++++++++++++++++++++
-    iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7--
-    iab CoM /** ***************************************************************/
-
-"++ NOVA LINHA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    au BufNewFile,BufRead,Filetype * imap \<cr> <esc>o
-
-"++ MATEMÁTICA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    "Símbolos matemáticos de todos os tipos possíveis
-
-"---- OPERADORES
-iab _MAIS_MENOS_    ±
-iab _TENSORIAL_     ⊗
-iab _SOMA_DIRETA_   ⊕
-
-"---- LÓGICA
-iab _PARA_TODO_     ∀
-iab _EXISTE_        ∃
-iab _NAO_           ¬
-iab _E_             ∧
-iab _OU_            ∨
-iab _PORTANTO_      ∴
-iab _PORQUE_        ∵
-iab _IMPLICA_       →
-iab _SE_SO_SE_      ↔
-
-"---- COMPARAÇÃO
-iab _DIFERENTE_     ≠
-iab _APROX_         ≈
-iab _CONGRUENTE_    ≅
-iab _EQUIVALENTE_   ≡
-iab _MAIOR_IGUAL_   ≥
-iab _MENOR_IGUAL_   ≤
-
-"---- CÁLCULO
-iab _FUNCAO_COMP_   ∘
-iab _INFINITO_      ∞
-iab _DIFERENCIAL_   ∂
-iab _GRADIENTE_     ∇
-iab _INTEGRAL_      ∫
-iab _INTEG_LINHA_   ∮
-iab _SOMATORIO_     ∑
-iab _PRODUTORIO_    ∏
-
-"---- CONJUNTOS
-iab _VAZIO_         ∅
-iab _NATURAIS_      ℕ
-iab _INTEIROS_      ℤ
-iab _RACIONAIS_     ℚ
-iab _REAIS_         ℝ
-iab _COMPLEXOS_     ℂ
-
-"---- CONJUNTÍSTICA
-iab _PERTENCE_      ∈
-iab _NAO_PERTENCE_  ∉
-iab _CONTEM_        ⊇
-iab _CONTEM_DIF_    ⊃
-iab _CONTIDO_       ⊆
-iab _CONTIDO_DIF_   ⊂
-iab _UNIAO_         U
-iab _INTER_         ∩
-
-"---- ÁLGEBRA LINEAR
-iab _ORTOGONAL_     ⊥
-iab _PROD_INTERNO_  ⟨⟩
+    iab RuL 
+  \ ----+----1----+----2----+----3----+----4----+----5----+----6----+----7--
+    iab CoM 
+  \ /** ***************************************************************/
 
 
 "///////////////////////////////////////////////////////////////////////
@@ -250,8 +174,8 @@ iab _PROD_INTERNO_  ⟨⟩
 "   <F5>: (A/I) troca de buffers (para múltiplas janelas abertas)
 "   <F6>: (A)   esconde/revela os comentários
 "   <F7>: (V)   comenta/descomenta código
-"   <F8>: (A)   cria lista de tags C/C++
-"   <F9>: (I)   liga/desliga identação automática
+"   <F8>: (A)   compilação do código (sem make)
+"   <F9>: (A)   compilação e execução do código (sem make)
 
 
 "++ DICIONÁRIO/ORTOGRAFIA E AUTOCOMPLETAMENTO 
@@ -276,7 +200,7 @@ iab _PROD_INTERNO_  ⟨⟩
     "Abre lista de erros do :make
     autocmd BufNewFile,BufRead * 
     \   if exists(":Errors")
-    \|      exe "map <F3> <esc>:SyntasticCheck<cr>:Errors<cr>"
+    \|      exe "map <F3> <esc>:SyntasticCheck<cr>"
     \|  else
     \|      exe "map <F3> <esc>:call Makerr()<cr>"  
     "Leva ao próximo erro do :make
@@ -307,11 +231,21 @@ iab _PROD_INTERNO_  ⟨⟩
     \|      exe ":echo 'No identation plugin instaled'"
     \|  endif
 
-"++ TAGS C/C++: <F8>
-    map <F8> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-"++ IDENTAÇÃO AUTOMÁTICA: <F9> 
-    imap <F9> <esc>:call Identation()<cr>a
+"++ COMPILAÇÃO DO CÓDIGO (SEM MAKE): <F8> 
+    autocmd VimEnter * 
+    \   if exists(":SCCompile") 
+    \|      exe "map <F9> :SCCompile<CR>" 
+    \|  else
+    \|      exe ":echo 'No compiler plugin instaled'"
+    \|  endif
+    
+"++ COMPILAÇÂO E EXECUÇÃO DO CÓDIGO (SEM MAKE): <F9> 
+    autocmd VimEnter * 
+    \   if exists(":SCCompileRun") 
+    \|      exe "map <F10> :SCCompileRun<CR>" 
+    \|  else
+    \|      exe ":echo 'No compiler plugin instaled'"
+    \|  endif
 
 "++ RECARREGAR VIMRC: <F12> 
     au BufNewFile,BufReadPost,Filetype * call Recharge_vimrc() 
@@ -368,12 +302,6 @@ iab _PROD_INTERNO_  ⟨⟩
             unlet g:hiddcomm | hi Comment ctermfg=cyan  guifg=cyan term=bold
         endif
     endfu
-
-"++ IDENTAÇÃO AUTOMÁTICA +++++++++++++++++++++++++++++++++++++++++++++++
-    function! Identation()
-        exe "filetype indent off"
-        exe "filetype plugin indent off"
-    endfunction
 
 "++ RECARREGAR VIMRC +++++++++++++++++++++++++++++++++++++++++++++++++++
     function! Recharge_vimrc()

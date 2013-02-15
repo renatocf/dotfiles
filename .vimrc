@@ -47,8 +47,10 @@
 
 "++ IDENTAÇÃO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     filetype plugin indent on   " Identações para diferentes linguagnes
+    set wrap          " Linhas grandes exibidas sem rolagem horizontal
     set tabstop=4     " Tamanho real da tabulação com 4 espaços 
     set expandtab     " Troca tabulações por espaços
+    set linebreak     " Quebra de linha extensa só em final de palavra
     set textwidth=72  " 72 de largura máxima (coisa de cartão perfurado)
     set shiftwidth=4  " Identação com 4 espaços de tabulação
     set softtabstop=4 " Tamanho aparente da tabulação com 4 espaços
@@ -234,7 +236,7 @@
 "++ COMPILAÇÃO DO CÓDIGO (SEM MAKE): <F8> 
     autocmd VimEnter * 
     \   if exists(":SCCompile") 
-    \|      exe "map <F9> :SCCompile<CR>" 
+    \|      exe "map <F8> :SCCompile<CR>" 
     \|  else
     \|      exe ":echo 'No compiler plugin instaled'"
     \|  endif
@@ -242,7 +244,7 @@
 "++ COMPILAÇÂO E EXECUÇÃO DO CÓDIGO (SEM MAKE): <F9> 
     autocmd VimEnter * 
     \   if exists(":SCCompileRun") 
-    \|      exe "map <F10> :SCCompileRun<CR>" 
+    \|      exe "map <F9> :SCCompileRun<CR>" 
     \|  else
     \|      exe ":echo 'No compiler plugin instaled'"
     \|  endif

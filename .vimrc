@@ -104,12 +104,14 @@
    
 "++ SUPERTAB +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " SuperTab plugin
+    " let g:SuperTabDefaultCompletionType = "context"
     autocmd FileType *
     \   if &omnifunc != ''
     \|    call SuperTabChain(&omnifunc, "<c-p>")
     \|    call SuperTabSetDefaultCompletionType("<c-x><c-u>")
     \|  endif
-  
+    " set wildmode=longest,list
+    
     let g:SuperTabMappingTabLiteral = "<leader><tab>"
 
 "++ SINTAXE (SYNTASTIC) +++++++++++++++++++++++++++++++++++++++++++++++
@@ -202,7 +204,8 @@
     "Abre lista de erros do :make
     autocmd BufNewFile,BufRead * 
     \   if exists(":Errors")
-    \|      exe "map <F3> <esc>:SyntasticCheck<cr>"
+    \|      exe "map <F3> <esc>:w<cr>:SyntasticCheck<cr>"
+    \|      exe "imap <F3> <esc>:w<cr>:SyntasticCheck<cr>i"
     \|  else
     \|      exe "map <F3> <esc>:call Makerr()<cr>"  
     "Leva ao próximo erro do :make

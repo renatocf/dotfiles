@@ -11,6 +11,7 @@
 # Git files (including this .gitignore)
 !.gitconfig
 !.gitignore
+!.gitignore_global
 
 # Vim files (.vimrc and .vim directory)
 !.vim/

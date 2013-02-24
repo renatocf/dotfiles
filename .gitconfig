@@ -3,7 +3,40 @@
 	email = renatocordeiroferreira@gmail.com
 [credential]
 	helper = cache
-[color]
-	ui = auto
 [merge]
 	stat = true
+[core]
+	excludesfile = /home/renatocf/.gitignore_global
+
+
+# Default colors. Bold is used to be easier 
+# to see in black terminals
+[color]
+	ui = auto
+[color "diff"]
+    plain = normal
+    meta = bold
+    frag = cyan bold
+    old = red bold
+    new = green bold
+    commit = yellow bold
+    whitespace = normal red
+[color "branch"]
+    current = green
+    local = normal
+    remote = red
+    plain = normal
+[color "status"]
+    header = normal
+    added = red bold
+    updated = green bold
+    changed = red bold
+    untracked = red bold
+    nobranch = red bold
+[color "grep"]
+    match = normal
+[color "interactive"]
+    prompt = normal
+    header = normal
+    help = normal
+    error = normal

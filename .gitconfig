@@ -1,3 +1,9 @@
 [user]
-	email = renatocordeiroferreira@gmail.com
 	name = Renato Cordeiro Ferreira
+	email = renatocordeiroferreira@gmail.com
+[credential]
+	helper = cache
+[color]
+	ui = auto
+[merge]
+	stat = true

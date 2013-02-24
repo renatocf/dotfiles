@@ -2,8 +2,8 @@
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -11,9 +11,28 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -halF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# mkdir creates parent directories
+alias mkdir='mkdir -pv'
+
+# more human-readability
+alias mount='mount | column -t'
+alias df='df -H'
+alias du='du -ch'
+
+# prompts when removing more than 3 files
+alias rm='rm -I --preserve-root'
+
+# increase safety when managing files
+alias mv='mv -i'
+alias cp='cp -i'
+alias ln='ln -i'
+
+# show opened ports
+alias ports='netstat -tulanp'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

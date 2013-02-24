@@ -5,17 +5,6 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-# don't put duplicate lines in the history. See bash(1) for more options
-# ... or force ignoredups and ignorespace
-HISTCONTROL=ignoredups:ignorespace
-
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=1000
-HISTFILESIZE=2000
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -67,36 +56,6 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    alias grep='grep --color=auto'
-    alias fgrep='fgrep --color=auto'
-    alias egrep='egrep --color=auto'
-fi
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
-
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -104,47 +63,43 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+# Alias definitions.
+# You may want to put all your aliases into a separate file like
+# ~/.bash_aliases or ~/.bash/aliases.bash, instead of adding them 
+# here directly. See /usr/share/doc/bash-doc/examples in the bash-doc 
+# package.
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+elif [ -f ~/.bash/aliases.bash ]; then
+    . ~/.bash/aliases.bash
+fi
 
-########################################################################
-#                          PERSONALIZATIONS                            #
-########################################################################
+# Paths
+# You may want to put all your paths into a separate file like
+# ~/.bash_paths or ~/.bash/paths.bash, instead of adding them here 
+# directly.
+if [ -f ~/.bash_paths ]; then
+    . ~/.bash_paths
+elif [ -f ~/.bash/paths.bash ]; then
+    . ~/.bash/paths.bash
+fi
 
-# History options
-export HISTFILE=~/.bash_history
-export HISTIGNORE=clear:"cd ~":"cd ..":history:h*:ls:la:ll:l
-export HISTCONTROL=ignoredups
+# History
+# You may want to put all your history configurations into a separate
+# file like ~/.bash_hisconf or ~/.bash/hisconf.bash, instead of adding 
+# them here directly.
+if [ -f ~/.bash_hisconf ]; then
+    . ~/.bash_hisconf
+elif [ -f ~/.bash/hisconf.bash ]; then
+    . ~/.bash/hisconf.bash
+fi
 
-# Extract command (from ArchWiki)
-extract () {
-  if [ -f $1 ] ; then
-      case $1 in
-          *.tar.bz2)   tar xvjf $1    ;;
-          *.tar.gz)    tar xvzf $1    ;;
-          *.bz2)       bunzip2 $1     ;;
-          *.rar)       rar x $1       ;;
-          *.gz)        gunzip $1      ;;
-          *.tar)       tar xvf $1     ;;
-          *.tbz2)      tar xvjf $1    ;;
-          *.tgz)       tar xvzf $1    ;;
-          *.zip)       unzip $1       ;;
-          *.Z)         uncompress $1  ;;
-          *.7z)        7z x $1        ;;
-          *)           echo "don't know how to extract '$1'..." ;;
-      esac
-  else
-      echo "'$1' is not a valid file!"
-  fi
-}
-
-# History special aliase
-h () {
-    if [[ "$1" =~ ^[0-9]*$ ]] ; then
-        history $1
-    else
-        history | grep "$1" 
-    fi
-}
-
-# Aliases
-alias more='less'
+# Functions
+# You may want to put all your functions into a separate file 
+# like ~/.bash_functions or ~/.bash/functions.bash, instead of 
+# adding them here directly.
+if [ -f ~/.bash_functions ]; then
+    . ~/.bash_functions
+elif [ -f ~/.bash/functions.bash ]; then
+    . ~/.bash/functions.bash
+fi

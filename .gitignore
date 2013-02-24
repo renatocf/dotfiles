@@ -1,0 +1,21 @@
+# .GITIGNORE MADE TO DOT FILES
+# Author: Renato Cordeiro Ferreira
+
+# First of all, ignore everything
+# in your directory
+*
+
+# Now, let's make git looks to the dot files
+# we want to mantain with it:
+    
+# Git files (including this .gitignore)
+!.gitconfig
+!.gitignore
+
+# Vim files (.vimrc and .vim directory)
+!.vim/
+!.vimrc
+
+# Bash files (.bashrc and .bash directory)
+!.bash/
+!.bashrc

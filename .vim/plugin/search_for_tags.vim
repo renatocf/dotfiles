@@ -52,8 +52,6 @@ function! Search_for_tags()
                  \ .'--extra=+q '.file_name.'.tmp_tags > '.tmp_dir.'")'
 
                 exe "setlocal tags+=" . tmp_dir . file_name
-            else
-                echo "b"
             endif
 
             let i = 0

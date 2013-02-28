@@ -1,3 +1,6 @@
+#!/bin/bash
+# ~/.bash/aliases
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
@@ -11,7 +14,7 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -halF'
+alias ll='ls -hAlF'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -27,9 +30,12 @@ alias du='du -ch'
 alias rm='rm -I --preserve-root'
 
 # increase safety when managing files
-alias mv='mv -i'
-alias cp='cp -i'
-alias ln='ln -i'
+alias mv='mv -vi'
+alias cp='cp -vi'
+alias ln='ln -vi'
+
+# start X with no error messages
+alias startx='startx 2> /dev/null'
 
 # show opened ports
 alias ports='netstat -tulanp'

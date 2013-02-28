@@ -22,12 +22,12 @@ setlocal comments+=f://     " permite, entretanto, que // seja usado
     " Para criar novas tags para arquivos:
     " ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .
     
-    imap .  .<tab>
-    imap -> -><tab>
-    imap :: ::<tab>
+    " imap .  .<tab>
+    " imap -> -><tab>
+    " imap :: ::<tab>
 
     let OmniCpp_ShowAccess = 1 " +, - e # no menu popup
-    let OmniCpp_MayCompleteDot   = 0 " Autocompletar com .
+    " let OmniCpp_MayCompleteDot   = 0 " Autocompletar com .
     let OmniCpp_MayCompleteArrow = 0 " Autocompletar com ->
     let OmniCpp_MayCompleteScope = 0 " Autocompletar com ::
     let OmniCpp_NamespaceSearch  = 2 " Procura nos namespaces
@@ -37,6 +37,3 @@ setlocal comments+=f://     " permite, entretanto, que // seja usado
     let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
     " Lista de namespaces que não são incluídos com o nome
     " da função durante o autocompletamento
-
-
-

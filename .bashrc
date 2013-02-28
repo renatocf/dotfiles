@@ -76,11 +76,9 @@ fi
 
 # Profile
 # You may want to put all your paths into a separate file like
-# ~/.bash_paths or ~/.bash/paths.bash, instead of adding them here 
+# ~/.profile or ~/.bash/profile.bash, instead of adding them here 
 # directly.
-if [ -f ~/.profile ]; then
-    . ~/.profile
-elif [ -f ~/.profile.bash ]; then
+if [ -f ~/.bash/profile.bash ]; then
     . ~/.bash/profile.bash
 fi
 
@@ -102,4 +100,14 @@ if [ -f ~/.bash_functions ]; then
     . ~/.bash_functions
 elif [ -f ~/.bash/functions.bash ]; then
     . ~/.bash/functions.bash
+fi
+
+# Logout
+# You may want to put your logout configurations into a separate file 
+# like ~/.bash_logout or ~/.bash/logout.bash, instead of 
+# adding them here directly.
+if [ -f ~/.bash_logout ]; then
+    . ~/.bash_logout
+elif [ -f ~/.bash/logout.bash ]; then
+    . ~/.bash/logout.bash
 fi

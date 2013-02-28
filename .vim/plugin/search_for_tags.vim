@@ -6,7 +6,8 @@ if !exists('g:search_tags_path')
     let g:search_tags_path = "$HOME/.vim/tags/"
 endif
 
-let g:tag_files = [ 'gtk.tags',
+let g:tag_files = [ 'math.h',
+                \   'gtk.tags',
                 \   'stdio.tags', 
                 \   'stdlib.tags',
                 \   'string.tags',

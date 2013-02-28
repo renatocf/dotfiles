@@ -20,3 +20,4 @@
 # Bash files (.bashrc and .bash directory)
 !.bash/
 !.bashrc
+!.profile

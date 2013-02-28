@@ -74,14 +74,14 @@ elif [ -f ~/.bash/aliases.bash ]; then
     . ~/.bash/aliases.bash
 fi
 
-# Paths
+# Profile
 # You may want to put all your paths into a separate file like
 # ~/.bash_paths or ~/.bash/paths.bash, instead of adding them here 
 # directly.
-if [ -f ~/.bash_paths ]; then
-    . ~/.bash_paths
-elif [ -f ~/.bash/paths.bash ]; then
-    . ~/.bash/paths.bash
+if [ -f ~/.profile ]; then
+    . ~/.profile
+elif [ -f ~/.profile.bash ]; then
+    . ~/.bash/profile.bash
 fi
 
 # History

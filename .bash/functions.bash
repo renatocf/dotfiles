@@ -30,6 +30,6 @@ h () {
     elif [ -n "$2" ] && [[ "$2" =~ ^[0-9]*$ ]] ; then
         history | grep $1 | tail -n $2
     else
-        history | grep "$1" 
+        history | grep $1 
     fi
 }

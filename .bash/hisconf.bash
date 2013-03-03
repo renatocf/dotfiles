@@ -1,3 +1,6 @@
+#!/bin/bash 
+# ~/.bash/hisconf.bash
+
 # save history file, if existis, in .bash/ directory. 
 # In other cases, save it in .bash_history
 if [ -d ~/.bash ]; then

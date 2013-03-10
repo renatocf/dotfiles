@@ -37,3 +37,6 @@
 [submodule ".vim/bundle/STL-improved"]
 	path = .vim/bundle/STL-improved
 	url = git@github.com:vim-scripts/STL-improved.git
+[submodule ".vim/bundle/fugitive"]
+	path = .vim/bundle/fugitive
+	url = git@github.com:tpope/vim-fugitive.git

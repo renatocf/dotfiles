@@ -16,3 +16,6 @@
 [submodule "SingleCompile"]
 	path = SingleCompile
 	url = git@github.com:xuhdev/SingleCompile.git
+[submodule ".vim/bundle/SuperTab"]
+	path = .vim/bundle/SuperTab
+	url = git@github.com:ervandew/supertab.git

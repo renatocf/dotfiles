@@ -7,3 +7,6 @@
 [submodule ".vim/bundle/bio-vim"]
 	path = .vim/bundle/bio-vim
 	url = git@github.com:viklund/bio-vim.git
+[submodule ".vim/bundle/gtk-vim-syntax"]
+	path = .vim/bundle/gtk-vim-syntax
+	url = git@github.com:vim-scripts/gtk-vim-syntax.git

@@ -15,6 +15,7 @@
 
 # Vim files (.vimrc and .vim directory)
 !.vim/
+!.vim/*
 !.vimrc
 
 # Bash files (.bashrc and .bash directory)

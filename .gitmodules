@@ -10,3 +10,6 @@
 [submodule ".vim/bundle/gtk-vim-syntax"]
 	path = .vim/bundle/gtk-vim-syntax
 	url = git@github.com:vim-scripts/gtk-vim-syntax.git
+[submodule ".vim/bundle/OmniCppComplete"]
+	path = .vim/bundle/OmniCppComplete
+	url = git@github.com:vim-scripts/OmniCppComplete.git

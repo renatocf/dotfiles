@@ -4,3 +4,6 @@
 [submodule ".vim/bundle/a"]
 	path = .vim/bundle/a
 	url = https://github.com/vim-scripts/a.vim
+[submodule ".vim/bundle/bio-vim"]
+	path = .vim/bundle/bio-vim
+	url = git@github.com:viklund/bio-vim.git

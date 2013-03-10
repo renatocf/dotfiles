@@ -25,3 +25,6 @@
 [submodule ".vim/bundle/SingleCompile"]
 	path = .vim/bundle/SingleCompile
 	url = git@github.com:xuhdev/SingleCompile.git
+[submodule ".vim/bundle/Syntastic"]
+	path = .vim/bundle/Syntastic
+	url = git@github.com:scrooloose/syntastic.git

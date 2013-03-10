@@ -31,3 +31,6 @@
 [submodule ".vim/bundle/taglist"]
 	path = .vim/bundle/taglist
 	url = git@github.com:vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/tComment"]
+	path = .vim/bundle/tComment
+	url = git@github.com:vim-scripts/tComment.git

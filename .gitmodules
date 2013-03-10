@@ -34,3 +34,6 @@
 [submodule ".vim/bundle/tComment"]
 	path = .vim/bundle/tComment
 	url = git@github.com:vim-scripts/tComment.git
+[submodule ".vim/bundle/STL-improved"]
+	path = .vim/bundle/STL-improved
+	url = git@github.com:vim-scripts/STL-improved.git

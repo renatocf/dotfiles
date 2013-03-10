@@ -28,7 +28,7 @@ h () {
     if [[ "$1" =~ ^[0-9]*$ ]] ; then
         history $1
     elif [ -n "$2" ] && [[ "$2" =~ ^[0-9]*$ ]] ; then
-        history | grep $1 | tail -n $2
+        history | grep $1 | tail -n $2 | grep $1
     else
         history | grep $1 
     fi

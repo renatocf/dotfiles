@@ -1,45 +1,45 @@
 [submodule ".vim/bundle/nerdtree"]
 	path = .vim/bundle/nerdtree
-	url = git@github.com:scrooloose/nerdtree.git
+	url = ssh://git@github.com:22/scrooloose/nerdtree.git
 [submodule ".vim/bundle/a"]
 	path = .vim/bundle/a
-	url = git@github.com:vim-scripts/a.vim.git
+	url = ssh://git@github.com:22/vim-scripts/a.vim.git
 [submodule ".vim/bundle/bio-vim"]
 	path = .vim/bundle/bio-vim
-	url = git@github.com:viklund/bio-vim.git
+	url = ssh://git@github.com:22/viklund/bio-vim.git
 [submodule ".vim/bundle/gtk-vim-syntax"]
 	path = .vim/bundle/gtk-vim-syntax
-	url = git@github.com:vim-scripts/gtk-vim-syntax.git
+	url = ssh://git@github.com:22/vim-scripts/gtk-vim-syntax.git
 [submodule ".vim/bundle/OmniCppComplete"]
 	path = .vim/bundle/OmniCppComplete
-	url = git@github.com:vim-scripts/OmniCppComplete.git
+	url = ssh://git@github.com:22/vim-scripts/OmniCppComplete.git
 [submodule "SingleCompile"]
 	path = SingleCompile
-	url = git@github.com:xuhdev/SingleCompile.git
+	url = ssh://git@github.com:22/xuhdev/SingleCompile.git
 [submodule ".vim/bundle/SuperTab"]
 	path = .vim/bundle/SuperTab
-	url = git@github.com:ervandew/supertab.git
+	url = ssh://git@github.com:22/ervandew/supertab.git
 [submodule "SuperTab"]
 	path = SuperTab
-	url = git@github.com:ervandew/supertab.git
+	url = ssh://git@github.com:22/ervandew/supertab.git
 [submodule ".vim/bundle/SingleCompile"]
 	path = .vim/bundle/SingleCompile
-	url = git@github.com:xuhdev/SingleCompile.git
+	url = ssh://git@github.com:22/xuhdev/SingleCompile.git
 [submodule ".vim/bundle/Syntastic"]
 	path = .vim/bundle/Syntastic
-	url = git@github.com:scrooloose/syntastic.git
+	url = ssh://git@github.com:22/scrooloose/syntastic.git
 [submodule ".vim/bundle/taglist"]
 	path = .vim/bundle/taglist
-	url = git@github.com:vim-scripts/taglist.vim.git
+	url = ssh://git@github.com:22/vim-scripts/taglist.vim.git
 [submodule ".vim/bundle/tComment"]
 	path = .vim/bundle/tComment
-	url = git@github.com:vim-scripts/tComment.git
+	url = ssh://git@github.com:22/vim-scripts/tComment.git
 [submodule ".vim/bundle/STL-improved"]
 	path = .vim/bundle/STL-improved
-	url = git@github.com:vim-scripts/STL-improved.git
+	url = ssh://git@github.com:22/vim-scripts/STL-improved.git
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
-	url = git@github.com:tpope/vim-fugitive.git
+	url = ssh://git@github.com:22/tpope/vim-fugitive.git
 [submodule ".vim/bundle/pathogen"]
 	path = .vim/bundle/pathogen
-	url = git@github.com:tpope/vim-pathogen.git
+	url = ssh://git@github.com:22/tpope/vim-pathogen.git

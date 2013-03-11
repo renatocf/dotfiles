@@ -92,7 +92,7 @@
     set statusline+=\ \ \ \ %P       " Porcentagem na tela
 
 "++ PLUGINS (PATHOGEN) +++++++++++++++++++++++++++++++++++++++++++++++++
-    runtime bundle/vim-pathogen/autoload/pathogen.vim
+    runtime bundle/pathogen/autoload/pathogen.vim
     call pathogen#infect()
 
 "++ JANELA DE POPUP ++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -218,7 +218,7 @@
     \   if exists(":NERDTreeToggle") 
     \|      exe "map <F4> :call Resize('NERDTreeToggle', 30, 0)<cr>" 
     \|  else
-    \|      exe "map <F4> :Vexplorer!<CR>"
+    \|      exe "map <F4> :Vex!<CR>"
     \|  endif
 
 "++ ALTERNAR JANELAS: <F5>

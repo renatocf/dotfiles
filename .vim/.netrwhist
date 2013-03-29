@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/home/renatocf/Documentos/3o_Semestre/MAC0323/Aulas/03.01-problema_josephus'
 let g:netrw_dirhist_2='/home/renatocf/.vim/bundle/gtk-vim-syntax'
+let g:netrw_dirhist_3='/home/renatocf/Documentos/3o_Semestre/MAC0323'
+let g:netrw_dirhist_4='/home/renatocf/Documentos/3o_Semestre/MAC0323/Aulas/07.03-Relacao_de_Equivalencia'
+let g:netrw_dirhist_5='/home/renatocf/Documentos/3o_Semestre/MAC0323/Aulas/05.01-leitura_de_arquivo'
+let g:netrw_dirhist_6='/home/renatocf/Documentos/3o_Semestre/MAC0323/MAC0323-EP1/pqueue'

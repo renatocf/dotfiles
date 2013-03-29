@@ -23,3 +23,6 @@
 !.bash/
 !.bashrc
 !.profile
+
+# Mercurial file (.hgrc)
+!.hgrc

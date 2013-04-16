@@ -45,6 +45,7 @@ iab _COMPLEXOS_     ℂ
 
 "---- CONJUNTÍSTICA
 iab _PERTENCE_      ∈
+iab _PERTENCENTE_   ∈
 iab _NAO_PERTENCE_  ∉
 iab _CONTEM_        ⊇
 iab _CONTEM_DIF_    ⊃

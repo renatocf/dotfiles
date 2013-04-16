@@ -135,6 +135,9 @@
     
     " Usa tabulações em todos os arquivos fasta
     au BufNewFile,BufRead,Filetype *.f{a,aa,fn,na,asta} set noexpandtab
+    
+"++ ASSEMBLY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    au VimEnter *.asm exe "setf nasm"
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

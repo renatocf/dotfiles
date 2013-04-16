@@ -19,6 +19,9 @@ alias ll='ls -hAlF'
 alias la='ls -A'
 alias l='ls -CF'
 
+# jobs management
+alias jobs='jobs -l'
+
 # mkdir creates parent directories
 alias mkdir='mkdir -pv'
 

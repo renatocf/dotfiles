@@ -21,6 +21,7 @@ alias l='ls -CF'
 
 # jobs management
 alias jobs='jobs -l'
+alias vi='vim'
 
 # mkdir creates parent directories
 alias mkdir='mkdir -pv'

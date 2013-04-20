@@ -1,0 +1,4 @@
+[ui]
+# Name data to appear in commits
+username = Renato Cordeiro Ferreira <renatocordeiroferreira@gmail.com>
+ssh = ssh -C

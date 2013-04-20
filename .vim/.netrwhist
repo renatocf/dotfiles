@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/renatocf/Documentos/3o_Semestre/MAC0323/Aulas/03.01-problema_josephus'
-let g:netrw_dirhist_2='/home/renatocf/.vim/bundle/gtk-vim-syntax'
-let g:netrw_dirhist_3='/nfs/home/bcc/renatocf/Documents/MAC0323/MAC0323-EP1/main'
-let g:netrw_dirhist_4='/nfs/home/bcc/renatocf/Documents/MAC0323/MAC0323-EP1/pltree'
-let g:netrw_dirhist_5='/nfs/home/bcc/renatocf/.vim'

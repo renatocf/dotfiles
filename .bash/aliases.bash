@@ -14,9 +14,13 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
+alias sl='ls' # I'm tired of this error message...
 alias ll='ls -hAlF'
 alias la='ls -A'
 alias l='ls -CF'
+
+# jobs management
+alias jobs='jobs -l'
 
 # mkdir creates parent directories
 alias mkdir='mkdir -pv'

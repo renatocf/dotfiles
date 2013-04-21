@@ -18,6 +18,7 @@
 !.vim/
 !.vim/*
 !.vimrc
+.vim/.netrwhist
 
 # Bash files (.bashrc and .bash directory)
 !.bash/

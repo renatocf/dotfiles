@@ -1,3 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/home/renatocf/Documentos/3o_Semestre/MAC0211/Aulas/14.01-projeto_de_interface/exemplo'

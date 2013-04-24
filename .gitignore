@@ -7,6 +7,9 @@
 
 # Now, let's make git looks to the dot files
 # we want to mantain with it:
+
+# README
+!.README.md
     
 # Git files (including this .gitignore)
 !.gitconfig

@@ -3,16 +3,20 @@
 	email = renatocordeiroferreira@gmail.com
 [credential]
 	helper = cache
-[merge]
-	stat = true
 [core]
 	excludesfile = /home/renatocf/.gitignore_global
 [diff]
     tool = vimdiff
+[difftool]
+	prompt = false
+[merge]
+	stat = true
+	tool = vimdiff
+[mergetool]
+	prompt = false
 [branch "master"]
 	remote = origin
 	merge = refs/heads/master
-
 
 ; Default colors. Bold is used to be easier 
 ; to see in black terminals

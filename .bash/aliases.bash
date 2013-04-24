@@ -35,6 +35,9 @@ alias mount='mount | column -t'
 alias df='df -H'
 alias du='du -ch'
 
+# Complete log to git
+alias githistory='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
+
 # prompts when removing more than 3 files
 alias rm='rm -I --preserve-root'
 

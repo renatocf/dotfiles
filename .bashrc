@@ -111,3 +111,6 @@ if [ -f ~/.bash_logout ]; then
 elif [ -f ~/.bash/logout.bash ]; then
     . ~/.bash/logout.bash
 fi
+
+export EDITOR=vim
+export VISUAL=vim

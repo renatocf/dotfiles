@@ -137,7 +137,7 @@
     au BufNewFile,BufRead,Filetype *.f{a,aa,fn,na,asta} set noexpandtab
     
 "++ ASSEMBLY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    au VimEnter *.asm exe "setf nasm"
+    au VimEnter,BufNewFile,BufRead *.asm exe "setf nasm"
 
 "++ LaTeX +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Aplicações requeridas pelo plugin vim-latex

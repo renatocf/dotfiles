@@ -134,11 +134,11 @@
         au BufNewFile,BufRead *.{nex,nexus,nxs,nx} setf nexus
     augroup end
     
-    " Usa tabulações em todos os arquivos fasta
-    au BufNewFile,BufRead,Filetype *.f{a,aa,fn,na,asta} set noexpandtab
+    " Usa tabulações em todos os arquivos gff
+    au BufNewFile,BufRead,Filetype *.{gff,gff3,gtf} set noexpandtab
     
 "++ ASSEMBLY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    au VimEnter *.asm exe "setf nasm"
+    au VimEnter,BufNewFile,BufRead *.asm exe "setf nasm"
 
 "++ LaTeX +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Aplicações requeridas pelo plugin vim-latex

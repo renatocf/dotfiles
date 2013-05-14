@@ -86,6 +86,7 @@
     set statusline+=%m               " Sinal modificado [+]
     set statusline+=%r               " Sinal só-leitura [RO]
     set statusline+=%y               " Formato do arquivo
+    set statusline+=%{fugitive#statusline()}
     set statusline+=%=               " Separador direita/esquerda
     set statusline+=%c,              " Coluna do cursos
     set statusline+=%l/%L            " Linha do cursor/total de linhas

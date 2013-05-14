@@ -24,8 +24,8 @@ alias jobs='jobs -l'
 alias vi='vim'
 
 # Opening stuff by ssh
-# alias gedit='gedit $> /dev/null &'
-# alias gvim='gvim $> /dev/null &'
+# alias gedit='gedit &> /dev/null &'
+# alias gvim='gvim &> /dev/null &'
 
 # mkdir creates parent directories
 alias mkdir='mkdir -pv'

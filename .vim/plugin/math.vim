@@ -6,6 +6,23 @@ iab _MAIS_MENOS_    ±
 iab _TENSORIAL_     ⊗
 iab _SOMA_DIRETA_   ⊕
 
+"---- FLECHAS
+iab _CIMA_          ↑
+iab _BAIXO_         ↓ 
+iab _DIR_           →
+iab _ESQ_           ←
+iab _DIR_BAIXO_     ↘
+iab _ESQ_BAIXO_     ↙
+iab _CIMA_BAIXO_    ↕
+iab _DIR_ESQ_       ↔
+
+"---- FLECHAS DUPLAS
+iab _DUPLA_CIMA_    ⇑
+iab _DUPLA_BAIXO_   ⇓
+iab _DUPLA_ESQ_     ⇒
+iab _DUPLA_DIR_     ⇐
+iab _DUPLA_ESQ_DIR_ ⇔
+
 "---- LÓGICA
 iab _PARA_TODO_     ∀
 iab _EXISTE_        ∃
@@ -53,6 +70,10 @@ iab _CONTIDO_       ⊆
 iab _CONTIDO_DIF_   ⊂
 iab _UNIAO_         U
 iab _INTER_         ∩
+
+"---- APROXIMAÇÕES
+iab _TETO_ ⌈⌉
+iab _CHAO_ ⌊⌋
 
 "---- ÁLGEBRA LINEAR
 iab _ORTOGONAL_     ⊥

@@ -144,6 +144,7 @@
     " Aplicações requeridas pelo plugin vim-latex
     set grepprg=grep\ -nH\ $*
     let g:tex_flavor='latex'
+    au VimEnter *.tex iab ~a ã
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

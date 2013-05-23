@@ -1,5 +1,5 @@
 DOTFILES por Renato Cordeiro Ferreira
-=====================================
+-------------------------------------
 
 Este diretório contém os seguintes arquivos de configurações:
 * mercurial: .hgrc;
@@ -7,7 +7,7 @@ Este diretório contém os seguintes arquivos de configurações:
 * git:       .gitignore, .gitignore-global, .gitconfig e .gitmodules;
 * vim:       .vimrc, .gvimrc e diretório .vim/; 
 
-## Instalação ## 
+### Instalação ###
 Para instalar, utilize o Makefile. Basta digitar `make` para 
 instalar todas as opções acima. `make clean` faz a desinstalação
 e `make update` a atualização dos plugins em submódulos do Vim. 

@@ -8,12 +8,11 @@ Este diretório contém os seguintes arquivos de configurações:
 * vim:       .vimrc, .gvimrc e diretório .vim/; 
 
 ## Instalação ## 
-----------------
 Para instalar, utilize o Makefile. Basta digitar `make` para 
 instalar todas as opções acima. `make clean` faz a desinstalação
 e `make update` a atualização dos plugins em submódulos do Vim. 
 
-## Vim + Submódulos ##
+### Vim + Submódulos ###
 Os plugins para vim estão colocados na pasta .vim/bundle e são 
 gerenciados pelo plugin pathogen (também em bundle) cujo runtime
 está definido no .vimrc. Para alterar a localização desse plugin,

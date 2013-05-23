@@ -8,7 +8,7 @@ MKDIR := mkdir -p
 OLD      := .old
 HOME     := ~
 CONFIGS  := vim bash git mercurial
-DOTFILES := git@github.com:renatocf/dotfiles.git
+DOTFILES := git://github.com/renatocf/dotfiles.git
 
 ## BUILD ##############################################################
 .PHONY: all

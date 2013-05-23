@@ -7,10 +7,12 @@ Este diretório contém os seguintes arquivos de configurações:
 * git:       .gitignore, .gitignore-global, .gitconfig e .gitmodules;
 * vim:       .vimrc, .gvimrc e diretório .vim/; 
 
+### INSTALAÇÃO ###
 Para instalar, utilize o Makefile. Basta digitar `make` para 
 instalar todas as opções acima. `make clean` faz a desinstalação
 e `make update` a atualização dos plugins em submódulos do Vim. 
 
+### Vim + Submódulos ###
 Os plugins para vim estão colocados na pasta .vim/bundle e são 
 gerenciados pelo plugin pathogen (também em bundle) cujo runtime
 está definido no .vimrc. Para alterar a localização desse plugin,
@@ -26,6 +28,7 @@ home e digitar, num shell, os comandos:
 Assim que terminar de fazer os downloads, os plugins estarão
 disponíveis.
 
+#### TagList ####
 O plugin TagList depende da instalação do programa cTags. Se este
 não estiver disponível ou não puder ser instalado, basta comentar
 o alias do plugin no .vimrc e o gerenciador padrão do vim ficará

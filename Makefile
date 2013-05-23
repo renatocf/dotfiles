@@ -7,7 +7,7 @@ MKDIR := mkdir -p
 ## FILES ##############################################################
 OLD      := .old
 HOME     := ~
-CONFIGS  := vim bash git hg 
+CONFIGS  := vim bash git mercurial
 DOTFILES := git@github.com:renatocf/dotfiles.git
 
 ## BUILD ##############################################################
@@ -37,7 +37,7 @@ git: $(shell ls .git*)
 	$(MV) $^ $(HOME)
 	
 .PHONY: hg
-hg: $(shell .hg*)
+mercurial: $(shell .hg*)
 	$(MV) .hgrc $(HOME)
 
 .PHONY: clean

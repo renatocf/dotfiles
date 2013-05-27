@@ -49,3 +49,5 @@
     header = normal
     help = normal
     error = normal
+[push]
+	default = simple

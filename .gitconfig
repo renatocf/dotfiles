@@ -14,6 +14,9 @@
 	tool = vimdiff
 [mergetool]
 	prompt = false
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
 
 ; Default colors. Bold is used to be easier 
 ; to see in black terminals

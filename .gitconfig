@@ -15,7 +15,7 @@
 [mergetool]
 	prompt = false
 [push]
-	; default = simple
+	default = current
 
 ; Default colors. Bold is used to be easier 
 ; to see in black terminals

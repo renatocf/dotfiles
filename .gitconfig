@@ -1,6 +1,6 @@
 [user]
 	name = Renato Cordeiro Ferreira
-	email = renatocordeiroferreira@gmail.com
+	email = renato.cferreira@hotmail.com
 [credential]
 	helper = cache
 [core]
@@ -14,8 +14,9 @@
 	tool = vimdiff
 [mergetool]
 	prompt = false
-[push]
-	default = current
+[branch "master"]
+    remote = origin
+    merge = refs/heads/master
 
 ; Default colors. Bold is used to be easier 
 ; to see in black terminals

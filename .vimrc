@@ -94,7 +94,9 @@
 
 "++ PLUGINS (PATHOGEN) +++++++++++++++++++++++++++++++++++++++++++++++++
     runtime bundle/pathogen/autoload/pathogen.vim
-    call pathogen#infect()
+    if exists(":pathogen#nfect")
+        call pathogen#infect()
+    endif
 
 "++ JANELA DE POPUP ++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Janela de popup mais completa
@@ -141,10 +143,32 @@
     au VimEnter,BufNewFile,BufRead *.asm exe "setf nasm"
 
 "++ LaTeX +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    
     " Aplicações requeridas pelo plugin vim-latex
-    set grepprg=grep\ -nH\ $*
-    let g:tex_flavor='latex'
-    au VimEnter *.tex iab ~a ã
+    "-------------------------------------------------------------
+        " 1: Vim-latex com 'grep' que gera o nome do arquivo
+        set grepprg=grep\ -nH\ $*
+        
+        " 2: Faz com que os arquivos .tex sejam carregados como 
+        "    'tex' e não como 'plaintext' ao serem criados
+        let g:tex_flavor='latex'
+    
+    " Configurações para o meu vim-latex
+    "-------------------------------------------------------------
+        let g:Tex_DefaultTargetFormat='pdf' " latexpdf como padrão
+        let g:Tex_BibtexFlavor = 'bibtex'   " bibtex como formato
+        let g:Tex_BIBINPUTS = "%\.bib"      " favorito de ciração
+    
+    " Desabilitando atalhos que atrapalham os acentos...
+    "-------------------------------------------------------------
+        let g:Tex_FontMaps=0         
+        let g:Tex_FontMenus=0        
+        let g:Tex_SectionMaps=0      
+        let g:Tex_SectionMenus=0     
+        let g:Tex_AdvancedMath = 0   " desabilitando o ~a criar 
+                                     " mathcal ou \cite
+        let g:Tex_EnvironmentMaps=0  
+        let g:Tex_EnvironmentMenus=0 
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

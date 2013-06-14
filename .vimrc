@@ -94,9 +94,8 @@
 
 "++ PLUGINS (PATHOGEN) +++++++++++++++++++++++++++++++++++++++++++++++++
     runtime bundle/pathogen/autoload/pathogen.vim
-    if exists(":pathogen#nfect")
-        call pathogen#infect()
-    endif
+    silent! call pathogen#infect()
+    silent! call pathogen#helptags()
 
 "++ JANELA DE POPUP ++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Janela de popup mais completa

@@ -136,6 +136,27 @@
     
     " Usa tabulações em todos os arquivos gff
     au BufNewFile,BufRead,Filetype *.{gff,gff3,gtf} set noexpandtab
+
+"++ FOLDING +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    autocmd BufWinLeave ?* mkview
+    autocmd BufWinEnter ?* silent loadview
+     
+    set foldmethod=syntax
+    set foldlevelstart=1
+    
+    " Javascript, Perl, PHP, R, Ruby, Shellscript, Vimscript e XML
+    " suportam folding baseado na identação
+    let javaScript_fold=1         " JavaScript
+    let perl_fold=1               " Perl
+    let php_folding=1             " PHP
+    let r_syntax_folding=1        " R
+    let ruby_fold=1               " Ruby
+    let sh_fold_enabled=1         " sh
+    let vimsyn_folding='af'       " Vim script
+    let xml_syntax_folding=1      " XML
+    
+    " Para Python, usar identação
+    au FileType *.py setlocal foldmethod=indent 
     
 "++ ASSEMBLY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     au VimEnter,BufNewFile,BufRead *.asm exe "setf nasm"

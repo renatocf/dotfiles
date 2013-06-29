@@ -352,8 +352,7 @@
     endfunction
 
 "++ ESCONDE COMENTÁRIOS ++++++++++++++++++++++++++++++++++++++++++++++++
-    " E como somos chiques ainda criamos uma função vim pra fazer o 
-    " serviço a CommOnOff() oculta/mostra os comentários, alternando.
+    " Oculta/mostra os comentários, alternadamente.
     fu! CommOnOff()
         if !exists('g:hiddcomm')
             let g:hiddcomm=1 | hi Comment ctermfg=black guifg=black

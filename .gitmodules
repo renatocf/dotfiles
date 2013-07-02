@@ -43,6 +43,9 @@
 [submodule ".vim/bundle/fugitive"]
 	path = .vim/bundle/fugitive
 	url = ssh://git@github.com:22/tpope/vim-fugitive.git
+[submodule ".vim/bundle/surround"]
+    path = .vim/bundle/surround
+    url = ssh://git@github.com:22/tpope/vim-surround.git
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex

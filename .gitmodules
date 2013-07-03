@@ -25,24 +25,6 @@
 [submodule "SuperTab"]
 	path = SuperTab
 	url = ssh://git@github.com:22/ervandew/supertab.git
-[submodule ".vim/bundle/SingleCompile"]
-	path = .vim/bundle/SingleCompile
-	url = ssh://git@github.com:22/xuhdev/SingleCompile.git
-[submodule ".vim/bundle/Syntastic"]
-	path = .vim/bundle/Syntastic
-	url = ssh://git@github.com:22/scrooloose/syntastic.git
-[submodule ".vim/bundle/taglist"]
-	path = .vim/bundle/taglist
-	url = ssh://git@github.com:22/vim-scripts/taglist.vim.git
-[submodule ".vim/bundle/tComment"]
-	path = .vim/bundle/tComment
-	url = ssh://git@github.com:22/vim-scripts/tComment.git
-[submodule ".vim/bundle/STL-improved"]
-	path = .vim/bundle/STL-improved
-	url = ssh://git@github.com:22/vim-scripts/STL-improved.git
-[submodule ".vim/bundle/fugitive"]
-	path = .vim/bundle/fugitive
-	url = ssh://git@github.com:22/tpope/vim-fugitive.git
-[submodule ".vim/bundle/vim-latex"]
-	path = .vim/bundle/vim-latex
-	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+[submodule ".vim/bundle/surround"]
+	path = .vim/bundle/surround
+	url = ssh://git@github.com:22/tpope/vim-surround.git

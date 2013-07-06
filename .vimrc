@@ -199,6 +199,8 @@
 "++ ARQUIVO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Abreviacoes uteis para salvar/sair
     cab W w | cab Q q | cab Wq wq | cab wQ wq | cab WQ wq
+    cab Wa wa | cab Qa qa | cab Wqa wqa | cab wQa wqa | cab wqA wqa
+    cab WQa wqa | cab WqA wqa | cab wQA wqa | cab WQA wqa
 
 "++ RÉGUA E COMENTÁRIO (TAMANHO 72) ++++++++++++++++++++++++++++++++++++
     iab RuL 

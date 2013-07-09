@@ -16,15 +16,33 @@
 [submodule ".vim/bundle/OmniCppComplete"]
 	path = .vim/bundle/OmniCppComplete
 	url = ssh://git@github.com:22/vim-scripts/OmniCppComplete.git
-[submodule "SingleCompile"]
-	path = SingleCompile
+[submodule ".vim/bundle/SingleCompile"]
+	path = .vim/bundle/SingleCompile
 	url = ssh://git@github.com:22/xuhdev/SingleCompile.git
 [submodule ".vim/bundle/SuperTab"]
 	path = .vim/bundle/SuperTab
 	url = ssh://git@github.com:22/ervandew/supertab.git
-[submodule "SuperTab"]
-	path = SuperTab
-	url = ssh://git@github.com:22/ervandew/supertab.git
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = ssh://git@github.com:22/tpope/vim-surround.git
+[submodule ".vim/bundle/html5"]
+	path = .vim/bundle/html5
+	url = ssh://git@github.com:22/othree/html5.vim.git
+[submodule ".vim/bundle/STL-improved"]
+    path = .vim/bundle/STL-improved
+    url = ssh://git@github.com:22/vim-scripts/STL-improved.git
+[submodule ".vim/bundle/Syntastic"]
+    path = .vim/bundle/Syntastic
+    url = ssh://git@github.com:22/scrooloose/syntastic.git
+[submodule ".vim/bundle/fugitive"]
+    path = .vim/bundle/fugitive
+    url = ssh://git@github.com:22/tpope/vim-fugitive.git
+[submodule ".vim/bundle/tComment"]
+    path = .vim/bundle/tComment
+    url = ssh://git@github.com:22/vim-scripts/tComment.git
+[submodule ".vim/bundle/taglist"]
+    path = .vim/bundle/taglist
+    url = ssh://git@github.com:22/vim-scripts/taglist.vim.git
+[submodule ".vim/bundle/vim-latex"]
+    path = .vim/bundle/vim-latex
+    url = http://git.code.sf.net/p/vim-latex/vim-latex

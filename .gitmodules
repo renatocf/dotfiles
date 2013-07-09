@@ -28,3 +28,6 @@
 [submodule ".vim/bundle/surround"]
 	path = .vim/bundle/surround
 	url = ssh://git@github.com:22/tpope/vim-surround.git
+[submodule ".vim/bundle/html5"]
+	path = .vim/bundle/html5
+	url = ssh://git@github.com:22/othree/html5.vim.git

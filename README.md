@@ -3,7 +3,7 @@ DOTFILES por Renato Cordeiro Ferreira
 
 Este diretório contém os seguintes arquivos de configurações:
 * mercurial: .hgrc;
-* bash:      .bashrc e diretório .bash/; 
+* bash:      .bashrc, .profile, .inputrc e diretório .bash/; 
 * git:       .gitignore, .gitignore-global, .gitconfig e .gitmodules;
 * vim:       .vimrc, .gvimrc e diretório .vim/; 
 

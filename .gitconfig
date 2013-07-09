@@ -4,7 +4,7 @@
 [credential]
 	helper = cache
 [core]
-	excludesfile = /home/renatocf/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [diff]
     tool = vimdiff
 [difftool]

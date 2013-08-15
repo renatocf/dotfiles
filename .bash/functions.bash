@@ -16,6 +16,7 @@ extract () {
           *.zip)       unzip $1       ;;
           *.Z)         uncompress $1  ;;
           *.7z)        7z x $1        ;;
+          *.jar)       jar xf $1      ;; 
           *)           echo "don't know how to extract '$1'..." ;;
       esac
   else

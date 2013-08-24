@@ -42,7 +42,7 @@ alias du='du -ch'
 alias githistory='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
 
 # prompts when removing more than 3 files
-alias rm='rm -I --preserve-root'
+alias rm='rm -i --preserve-root'
 
 # increase safety when managing files
 alias mv='mv -vi'

@@ -29,6 +29,8 @@ iab _DUPLA_ESQ_DIR_ ⇔
 iab _E_             ∧
 iab _OU_            ∨
 iab _XOR_           ⊕
+iab _G_E_           ⋀
+iab _G_OU_          ⋁
 iab _NAO_           ¬
 iab _IMPLICA_       →
 iab _VERDADEIRO_    ⊤
@@ -82,6 +84,8 @@ iab _CONTIDO_       ⊆
 iab _CONTIDO_DIF_   ⊂
 iab _UNIAO_         U
 iab _INTER_         ∩
+iab _G_UNIAO_       ⋃
+iab _G_INTER_       ⋂
 
 "---- APROXIMAÇÕES
 iab _TETO_ ⌈⌉

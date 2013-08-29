@@ -11,7 +11,9 @@ iab _CIMA_          ↑
 iab _BAIXO_         ↓ 
 iab _DIR_           →
 iab _ESQ_           ←
+iab _DIR_CIMA_      ↗
 iab _DIR_BAIXO_     ↘
+iab _ESQ_CIMA_      ↖
 iab _ESQ_BAIXO_     ↙
 iab _CIMA_BAIXO_    ↕
 iab _DIR_ESQ_       ↔
@@ -19,19 +21,29 @@ iab _DIR_ESQ_       ↔
 "---- FLECHAS DUPLAS
 iab _DUPLA_CIMA_    ⇑
 iab _DUPLA_BAIXO_   ⇓
-iab _DUPLA_ESQ_     ⇒
-iab _DUPLA_DIR_     ⇐
+iab _DUPLA_ESQ_     ⇐ 
+iab _DUPLA_DIR_     ⇒
 iab _DUPLA_ESQ_DIR_ ⇔
 
 "---- LÓGICA
-iab _PARA_TODO_     ∀
-iab _EXISTE_        ∃
-iab _NAO_           ¬
 iab _E_             ∧
 iab _OU_            ∨
+iab _XOR_           ⊕
+iab _NAO_           ¬
+iab _IMPLICA_       →
+iab _VERDADEIRO_    ⊤
+iab _FALSO_         ⊥
+iab _PROVA_         ⊢
+iab _TEOREMA_       ⊢
+iab _E_PROVADO_POR_ ⊣
+iab _NAO_PROVA_     ⊬
+iab _ACARRETA_      ⊨
+iab _NAO_ACARRETA_  ⊭
+iab _PARA_TODO_     ∀
+iab _EXISTE_        ∃
+iab _NAO_EXISTE_    ∄
 iab _PORTANTO_      ∴
 iab _PORQUE_        ∵
-iab _IMPLICA_       →
 iab _SE_SO_SE_      ↔
 
 "---- COMPARAÇÃO

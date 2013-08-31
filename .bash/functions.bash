@@ -5,17 +5,18 @@
 extract () {
   if [ -f $1 ] ; then
       case $1 in
+          *.7z)        7z x $1        ;;
+          *.Z)         uncompress $1  ;;
+          *.bz2)       bunzip2 $1     ;;
+          *.gz)        gunzip $1      ;;
+          *.jar)       jar xf $1      ;; 
+          *.rar)       rar x $1       ;;
+          *.tar)       tar xvf $1     ;;
           *.tar.bz2)   tar xvjf $1    ;;
           *.tar.gz)    tar xvzf $1    ;;
-          *.bz2)       bunzip2 $1     ;;
-          *.rar)       rar x $1       ;;
-          *.gz)        gunzip $1      ;;
-          *.tar)       tar xvf $1     ;;
           *.tbz2)      tar xvjf $1    ;;
           *.tgz)       tar xvzf $1    ;;
           *.zip)       unzip $1       ;;
-          *.Z)         uncompress $1  ;;
-          *.7z)        7z x $1        ;;
           *)           echo "don't know how to extract '$1'..." ;;
       esac
   else
@@ -25,11 +26,14 @@ extract () {
 
 # History special function
 h () {
-    if [[ "$1" =~ ^[0-9]*$ ]] ; then
+    if [[ "$1" =~ ^[0-9]*$ ]]; then
+        # When providing a number, print N lines
         history $1
-    elif [ -n "$2" ] && [[ "$2" =~ ^[0-9]*$ ]] ; then
+    elif [ -n "$2" ] && [[ "$2" =~ ^[0-9]*$ ]]; then
+        # For a number + a key, print N lines with 'key'
         history | grep $1 | tail -n $2 | grep $1
     else
+        # For just a key, prin all entries to it
         history | grep $1 
     fi
 }

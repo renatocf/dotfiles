@@ -13,6 +13,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# enable colors in Apache Ant
+alias ant='ant -logger org.apache.tools.ant.listener.AnsiColorLogger'
+
 # some more ls aliases
 alias sl='ls' # I'm tired of this error message...
 alias ll='ls -hAlF'
@@ -39,7 +42,7 @@ alias du='du -ch'
 alias githistory='git log --pretty=format:"[%h] %ae, %ar: %s" --stat'
 
 # prompts when removing more than 3 files
-alias rm='rm -I --preserve-root'
+alias rm='rm -i --preserve-root'
 
 # increase safety when managing files
 alias mv='mv -vi'

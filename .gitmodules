@@ -44,5 +44,5 @@
     path = .vim/bundle/Syntastic
     url = ssh://git@github.com:22/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-latex"]
-    path = .vim/bundle/vim-latex
-    url = http://git.code.sf.net/p/vim-latex/vim-latex
+	path = .vim/bundle/vim-latex
+	url = http://git.code.sf.net/p/vim-latex/vim-latex

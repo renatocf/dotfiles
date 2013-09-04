@@ -18,6 +18,12 @@
     remote = origin
     merge = refs/heads/master
 
+; Some nice alias
+[alias] 
+    tree = log --graph --decorate --pretty=oneline --abbrev-commit
+[alias] 
+    history = log --pretty=format:'%C(bold)[%h]%Creset %an, %ar:%n %C(yellow bold) %s %Creset' --stat
+
 ; Default colors. Bold is used to be easier 
 ; to see in black terminals
 [color]

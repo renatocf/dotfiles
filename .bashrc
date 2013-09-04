@@ -59,6 +59,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+# Editors
+export EDITOR=vim
+export VISUAL=vim
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -79,8 +83,7 @@ fi
 
 # Profile
 # You may want to put all your paths into a separate file like
-# ~/.profile or ~/.bash/profile.bash, instead of adding them here 
-# directly.
+# ~/.bash/profile.bash, instead of adding them here directly.
 if [ -f ~/.bash/profile.bash ]; then
     . ~/.bash/profile.bash
 fi
@@ -105,15 +108,8 @@ elif [ -f ~/.bash/functions.bash ]; then
     . ~/.bash/functions.bash
 fi
 
-# Logout
-# You may want to put your logout configurations into a separate file 
-# like ~/.bash_logout or ~/.bash/logout.bash, instead of 
-# adding them here directly.
-if [ -f ~/.bash_logout ]; then
-    . ~/.bash_logout
-elif [ -f ~/.bash/logout.bash ]; then
-    . ~/.bash/logout.bash
+# Colors
+# Define variables for colors in .bash, if avaiable
+if [ -f ~/.bash/colors.bash ]; then
+    . ~/.bash/colors.bash
 fi
-
-export EDITOR=vim
-export VISUAL=vim

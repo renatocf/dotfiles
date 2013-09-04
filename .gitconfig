@@ -20,6 +20,7 @@
 
 ; Some nice alias
 [alias] 
+    web = instaweb --httpd apache2 ; apache2, if avaiable...
     tree = log --graph --decorate --pretty=oneline --abbrev-commit
     history = log --pretty=format:'%C(bold)[%h]%Creset %an, %ar:%n %C(yellow bold) %s %Creset' --stat
 

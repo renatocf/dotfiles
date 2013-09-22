@@ -2,6 +2,7 @@
     "Símbolos matemáticos de todos os tipos possíveis
 
 "---- OPERADORES
+iab _RAIZ_          √
 iab _MAIS_MENOS_    ±
 iab _TENSORIAL_     ⊗
 iab _SOMA_DIRETA_   ⊕
@@ -17,6 +18,10 @@ iab _ESQ_CIMA_      ↖
 iab _ESQ_BAIXO_     ↙
 iab _CIMA_BAIXO_    ↕
 iab _DIR_ESQ_       ↔
+
+"---- RETICÊNCIAS
+iab _H_RET_          …
+iab _V_RET_         ⋮
 
 "---- FLECHAS DUPLAS
 iab _DUPLA_CIMA_    ⇑

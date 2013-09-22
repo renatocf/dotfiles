@@ -12,3 +12,6 @@ set wrapmargin=0
     " Opção usada para quebra de linha caso textwidth=0
     " (ao colocá-la como 0 evita-se que haja quebra de linhas 
     " que não eram desejadas já ao desativar o textwidth)
+
+"muda cores das variáveis
+hi Identifier ctermfg=lightgreen cterm=bold

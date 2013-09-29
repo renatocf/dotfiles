@@ -35,9 +35,9 @@ if [ -n "$force_color_prompt" ]; then
 	# We have color support; assume it's compliant with Ecma-48
 	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
 	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 
@@ -112,4 +112,10 @@ fi
 # Define variables for colors in .bash, if avaiable
 if [ -f ~/.bash/colors.bash ]; then
     . ~/.bash/colors.bash
+fi
+
+# Java
+# Define settings related to Java (eclipse/ant/javac/java)
+if [ -f ~/.bash/java.bash ]; then
+    . ~/.bash/java.bash
 fi

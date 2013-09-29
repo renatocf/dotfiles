@@ -1,2 +1,2 @@
 # Ant colors
-ANT_OPTS="-Dant.logger.defaults=$(pwd)/colors.ant"
+export ANT_OPTS="-Dant.logger.defaults=${HOME}/.bash/colors.ant"

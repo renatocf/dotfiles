@@ -13,9 +13,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# enable colors in Apache Ant
-alias ant='ant -logger org.apache.tools.ant.listener.AnsiColorLogger'
-
 # some more ls aliases
 alias sl='ls' # I'm tired of this error message...
 alias ll='ls -hAlF'

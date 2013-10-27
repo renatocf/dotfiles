@@ -46,3 +46,6 @@
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = http://git.code.sf.net/p/vim-latex/vim-latex
+[submodule ".vim/bundle/vim-gas"]
+	path = .vim/bundle/vim-gas
+	url = ssh://git@github.com:22/Shirk/vim-gas.git

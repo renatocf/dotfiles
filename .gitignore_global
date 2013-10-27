@@ -29,6 +29,7 @@ doc/tags
 ######################
 *.log
 *.sql
+*.todo
 *.sqlite
 
 # OS generated files #

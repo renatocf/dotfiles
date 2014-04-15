@@ -288,6 +288,7 @@
     autocmd VimEnter * 
     \   if exists(":TComment") 
     \|      exe "map <F7> :TComment<CR>" 
+    \|      exe "imap <F7> :TComment<CR>" 
     \|  else
     \|      exe ":echo 'No identation plugin instaled'"
     \|  endif

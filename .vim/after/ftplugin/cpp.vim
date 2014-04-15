@@ -6,3 +6,5 @@
 
 " Tags para C++
 setlocal tags+=$HOME/.vim/tags/cpp.tags 
+
+setf cpp.doxygen

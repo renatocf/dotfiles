@@ -49,3 +49,6 @@
 [submodule ".vim/bundle/vim-gas"]
 	path = .vim/bundle/vim-gas
 	url = ssh://git@github.com:22/Shirk/vim-gas.git
+[submodule ".vim/bundle/vim-DoxyGen-Syntax"]
+	path = .vim/bundle/vim-DoxyGen-Syntax
+	url = ssh://git@github.com:22/vim-scripts/DoxyGen-Syntax.git

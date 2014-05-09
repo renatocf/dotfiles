@@ -73,7 +73,7 @@ ON_IPURPLE="\e[0;105m"  # Purple
 ON_ICYAN="\e[0;106m"    # Cyan
 ON_IWHITE="\e[0;107m"   # White
 
-colors() 
+function colors
 {
    echo -e "${RESTORE}Restoring colors:${RESTORE}"
    echo -n "[${RESTORE}] "    ; echo -e "${RESTORE}RESTORE${RESTORE}"

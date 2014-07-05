@@ -5,3 +5,6 @@ $include /etc/inputrc
 "\e[B": history-search-forward
 "\e[C": forward-char
 "\e[D": backward-char
+
+# stop line bell
+set bell-style none

@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/vim-DoxyGen-Syntax"]
 	path = .vim/bundle/vim-DoxyGen-Syntax
 	url = ssh://git@github.com:22/vim-scripts/DoxyGen-Syntax.git
+[submodule ".vim/bundle/vim-glsl"]
+	path = .vim/bundle/vim-glsl
+	url = ssh://git@github.com:22/tikhomirov/vim-glsl.git

@@ -21,4 +21,4 @@ HISTSIZE=1000
 HISTFILESIZE=2000
 
 # words ingnored when saving history
-export HISTIGNORE="clear*":"cd ~":"cd ..":history:h\ *:ls:la:ll:l
+export HISTIGNORE="clear*":"cd ~":"cd ..":"cd -":fg:history:h\ *:ls:la:ll:l

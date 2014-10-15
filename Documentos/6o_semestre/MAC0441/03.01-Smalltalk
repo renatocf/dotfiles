@@ -1,0 +1,142 @@
+Introdução ao Smalltalk
+=========================
+
+"The purpose of Smalltalk project is to provide computer support for ghe
+criative spirit of everyone" - Daniel Ingals, 1981
+
+* Arquivos
+    - Imagem (arquivo.image) contém uma imagem binária de todas as 
+      classes definidas no sistema, todos os objetos instanciados, 
+      compilador, oambiente de desencolvimento, tudo na forma de
+      bytecodes.
+      
+    - Máquina virtual é um programa executábel de uma plataforma 
+      especídica que é responsável por interpretar a imagem.
+      
+    - Arquivo de mudança (arquivo.changes), grava um log de tudo o que 
+      foi feito no sistema (para poder recuperar se a imagem for 
+      corrompida ou se perder).
+      
+    - Existe também a opção (não tão comumente usada) de gravar em
+      arquivos-texto, métodos, classes, ou pacotes escritos.
+
+    - Basta selecionar o que se quer gravar (métodos, classes, pacotes,
+      etc.) e daí escolher a opção "File Out as..." que o código
+      selecionado será gravado, em XML, em um arquivo texto.
+
+    - Este arquivo XML com o codigo-fonte pode ser depos importado em
+      qualquer imagem.
+    
+    - No Squeak, háa possibilidade de exportar qualquer pedação de
+      código para HTML de forma que ele possa ser visualizado em um
+      navegador Wev e depois importado.
+
+    - A versão do Cincom Smalltalk para Windows permite a opção de
+      gravar umarquivo executável minimal contendo tudo para rodar um
+      certo programa Smalltalk (em geral, o arquivo não fica menor que
+      uns 5MB).
+
+* Fortemente Orientada a Objetos
+    - Tudo são objetos (1 é objeto da classe 'small integer')
+    - Objeto = dados + operações (encapsulamento)
+    - Conversa entre objetos:
+        - envio de mensagens (Smalltalk)
+        - chamada de métodos (Java)
+        - chamada de funções (C++)
+    - Em Smalltalk, um objeto A envia uma mensagem 'm' para um objeto B;
+      ao recebê-la, o sistema verdica se B possui um método
+      implementando aquela mensagem e, neste caso, o executa até que ele
+      devlva um valor que é então enviado de volta a A.
+
+* Mensagens Unárias
+    - Sintaxe: umObjeto umaMensagem
+    - Exemplo:
+        - 23 factorial (retorno: big integer)   } Tipo de retorno
+        - 2  factorial (retorno: small integer) } DEPENDE do nome
+        - 10 negated
+        - 'banana' reversa
+          ^^^^^^^^- objeto do tipo string, constante
+        - -20 isZero (retorno: booleano)
+
+* Mensagens binárias
+    - Sintaxe: umObjeto umaMensagem outroObjeto
+               ^^^^^^^^ ^^^^^^^^^^^ ^^^^^^^^^^^
+              recebedor  mensagem    parâmetro da mensagem
+    - Exemplo:
+        - 2 + 3
+        - 'Small','talk' (mensagem de concatenação)
+
+* Não há precedência de operadores
+    - Ao cotrário a maioria das linguagens, Smalltalk não define uma
+      ordem de precedência de operadores matemáticos (pois eles são
+      apenas mensasgens como outras quaisquer).
+    - Existem 4 regras básicas:
+        1. As mensagens são sempre processadas daesquerda para a
+           direita.
+        2. Operadores unários têm precedência sobre operadores binários.
+    - Parênteses podem ser utilizados para mudar a ordem de envio das
+      mensagens.
+
+* Mensagens com seletores ou palavras-chave (selectors ou keywords)
+    - Sintaxe: umObjeto seletor1: valor1 seletor2: valor2 seletor3:
+      valor3...
+    - Exemplos:
+        - substring := 'AlanKay' copyFrom: 3 to: 4
+        - dicionário at: 'suco' put: 'juice'
+        - calendário adicionaJogoDo: 'São Paulo' contraO: 'Palmeiras'
+          placar: 3 a: 2 dia: Date today
+
+* Mensagens Encadeadas
+    - Podemos encadear numa mesma linha ou sequencia quantas mensagens
+      quisermos.
+    - Exemplos:
+        - (10 * 3 + 3 negated) odd
+        - anosOitenta := ('Smalltalk-80' copyFrom: 10 to: 12) as Number
+          negated.
+
+* Mensagens em cascata
+    - Se vamos enviar várias mensagens para o mesmo objeto, podemos usar
+      uma gorma abreviada:
+    - Ao invés de escrever:
+        - coleção := OrderedCollection new.
+          coleção add: 1.
+          coleção add: 20.
+          coleção add: 25.
+          coleção add: 30.
+    - Podemos escrever simplesmente:
+        - coleção := OrderedCollection new.
+          coleção add: 1; 
+                  add: 20;
+                  add: 25;
+                  add: 30. (devolve o valor que ele acrescentou - 
+                            sempre o último valor, como numa linguagem
+                            funcional)
+    - Sequiser, pode colocar tudo na esma linha, também separando por ;
+
+* Protocolos
+    - Como, em Smalltalk, há muitos tipos de métodos (e eles podem ser
+      parecidos), criam-se PROTOCOLOS com o objetivo de agrupar métodos
+      similares.
+
+* Um detalhe importante: a mensagem yourself
+    - Se quiséssemos clocar todo o comando anterior em uma só linha, o
+      seguinte não funcionari:
+        - coleção := OrderedCollection new add: 1; add: 20; add: 25;
+          add: 30; yourself.
+
+* Squeak Smalltalk
+    - Flaps: menus laterais com vários elementos
+    - Truqes para fazer exceções:
+        - Executar: selecionar e ctrl+d
+        - Imprimir: selecionar e ctrl+p
+        - Inspecionar: selecionar e ctrl-i
+        - Explorar: selecionar e ctrl-e
+    - Workspace: 
+        - Lugar para fazer edições
+    - Selector browser: 
+        - Ajuda a buscar por métodos que façam algo. Para tanto, 
+          basta colocar quais são os argumentos e o seu retorno.
+    - Method finder: 
+        - Acha um método pelo seu nome
+    - System browser:
+        - Principal sistema de edição

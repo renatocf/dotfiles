@@ -55,12 +55,12 @@
 [submodule ".vim/bundle/vim-glsl"]
 	path = .vim/bundle/vim-glsl
 	url = ssh://git@github.com:22/tikhomirov/vim-glsl.git
-[submodule "/home/renatocf/.vim/bundle/vim-rails"]
-	path = /home/renatocf/.vim/bundle/vim-rails
+[submodule ".vim/bundle/vim-rails"]
+	path = .vim/bundle/vim-rails
 	url = ssh://git@github.com:22/tpope/vim-rails.git
-[submodule "/home/renatocf/.vim/bundle/vim-bundler"]
-	path = /home/renatocf/.vim/bundle/vim-bundler
+[submodule ".vim/bundle/vim-bundler"]
+	path = .vim/bundle/vim-bundler
 	url = ssh://git@github.com:22/tpope/vim-bundler.git
-[submodule "/home/renatocf/.vim/bundle/vim-rake"]
-	path = /home/renatocf/.vim/bundle/vim-rake
+[submodule ".vim/bundle/vim-rake"]
+	path = .vim/bundle/vim-rake
 	url = ssh://git@github.com:22/tpope/vim-rake.git

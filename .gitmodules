@@ -61,3 +61,6 @@
 [submodule "/home/renatocf/.vim/bundle/vim-bundler"]
 	path = /home/renatocf/.vim/bundle/vim-bundler
 	url = ssh://git@github.com:22/tpope/vim-bundler.git
+[submodule "/home/renatocf/.vim/bundle/vim-rake"]
+	path = /home/renatocf/.vim/bundle/vim-rake
+	url = ssh://git@github.com:22/tpope/vim-rake.git

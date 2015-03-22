@@ -7,4 +7,5 @@
 " Tags para C++
 setlocal tags+=$HOME/.vim/tags/cpp.tags 
 
-setf cpp.doxygen
+" Doxygen syntax highlight
+set syntax=cpp.doxygen

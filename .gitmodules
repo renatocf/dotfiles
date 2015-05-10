@@ -64,3 +64,6 @@
 [submodule ".vim/bundle/vim-rake"]
 	path = .vim/bundle/vim-rake
 	url = ssh://git@github.com:22/tpope/vim-rake.git
+[submodule ".vim/bundle/vim-multiple-cursors"]
+	path = .vim/bundle/vim-multiple-cursors
+	url = ssh://git@github.com:22/terryma/vim-multiple-cursors.git

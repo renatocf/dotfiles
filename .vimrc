@@ -190,6 +190,20 @@
         let g:Tex_EnvironmentMaps=0  
         let g:Tex_EnvironmentMenus=0 
 
+"++ Conque Terminal +++++++++++++++++++++++++++++++++++++++++++++++++++
+
+    " Tipo de terminal (apenas Unix)
+    "-------------------------------------------------------------
+        let g:ConqueTerm_TERM = 'xterm'
+
+    " Fecha o terminal ao encerrar o programa
+    "-------------------------------------------------------------
+        let g:ConqueTerm_CloseOnEnd = 1
+
+    " Continua lendo a saída do terminal
+    "-------------------------------------------------------------
+        let g:ConqueTerm_ReadUnfocused = 1
+
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
 "                               ABREVIAÇÕES     

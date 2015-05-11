@@ -8,8 +8,8 @@
 	path = .vim/bundle/bio-vim
 	url = ssh://git@github.com:22/viklund/bio-vim.git
 [submodule ".vim/bundle/fugitive"]
-    path = .vim/bundle/fugitive
-    url = ssh://git@github.com:22/tpope/vim-fugitive.git
+	path = .vim/bundle/fugitive
+	url = ssh://git@github.com:22/tpope/vim-fugitive.git
 [submodule ".vim/bundle/gtk-vim-syntax"]
 	path = .vim/bundle/gtk-vim-syntax
 	url = ssh://git@github.com:22/vim-scripts/gtk-vim-syntax.git
@@ -23,17 +23,17 @@
 	path = .vim/bundle/OmniCppComplete
 	url = ssh://git@github.com:22/vim-scripts/OmniCppComplete.git
 [submodule ".vim/bundle/taglist"]
-    path = .vim/bundle/taglist
-    url = ssh://git@github.com:22/vim-scripts/taglist.vim.git
+	path = .vim/bundle/taglist
+	url = ssh://git@github.com:22/vim-scripts/taglist.vim.git
 [submodule ".vim/bundle/tComment"]
-    path = .vim/bundle/tComment
-    url = ssh://git@github.com:22/vim-scripts/tComment.git
+	path = .vim/bundle/tComment
+	url = ssh://git@github.com:22/vim-scripts/tComment.git
 [submodule ".vim/bundle/SingleCompile"]
 	path = .vim/bundle/SingleCompile
 	url = ssh://git@github.com:22/xuhdev/SingleCompile.git
 [submodule ".vim/bundle/STL-improved"]
-    path = .vim/bundle/STL-improved
-    url = ssh://git@github.com:22/vim-scripts/STL-improved.git
+	path = .vim/bundle/STL-improved
+	url = ssh://git@github.com:22/vim-scripts/STL-improved.git
 [submodule ".vim/bundle/SuperTab"]
 	path = .vim/bundle/SuperTab
 	url = ssh://git@github.com:22/ervandew/supertab.git
@@ -41,8 +41,8 @@
 	path = .vim/bundle/surround
 	url = ssh://git@github.com:22/tpope/vim-surround.git
 [submodule ".vim/bundle/Syntastic"]
-    path = .vim/bundle/Syntastic
-    url = ssh://git@github.com:22/scrooloose/syntastic.git
+	path = .vim/bundle/Syntastic
+	url = ssh://git@github.com:22/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-latex"]
 	path = .vim/bundle/vim-latex
 	url = http://git.code.sf.net/p/vim-latex/vim-latex

@@ -67,3 +67,6 @@
 [submodule ".vim/bundle/vim-multiple-cursors"]
 	path = .vim/bundle/vim-multiple-cursors
 	url = ssh://git@github.com:22/terryma/vim-multiple-cursors.git
+[submodule ".vim/bundle/vim-conque"]
+	path = .vim/bundle/vim-conque
+	url = ssh://git@github.com:22/basepi/vim-conque.git

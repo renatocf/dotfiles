@@ -99,3 +99,6 @@ iab _CHAO_ ⌊⌋
 "---- ÁLGEBRA LINEAR
 iab _ORTOGONAL_     ⊥
 iab _PROD_INTERNO_  ⟨⟩
+
+"---- CÁLCULO
+iab _DEL_           ∂

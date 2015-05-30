@@ -1,6 +1,6 @@
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
-"                        PADRÕES DE INICIALIZAÇÃO
+"                            CONFIGURAÇÕES
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -92,51 +92,12 @@
     set statusline+=%l/%L            " Linha do cursor/total de linhas
     set statusline+=\ \ \ \ %P       " Porcentagem na tela
 
-"++ PLUGINS (PATHOGEN) +++++++++++++++++++++++++++++++++++++++++++++++++
-    runtime bundle/pathogen/autoload/pathogen.vim
-    silent! call pathogen#infect()
-    silent! call pathogen#helptags()
-
 "++ JANELA DE POPUP ++++++++++++++++++++++++++++++++++++++++++++++++++++
     " Janela de popup mais completa
     set completeopt=menuone,menu,longest,preview
     " Abre/fecha automaticamente a janela do menu popup
     au InsertLeave  * if pumvisible() == 0 | silent! pclose | endif
     au CursorMovedI * if pumvisible() == 0 | silent! pclose | endif
-
-"++ SUPERTAB +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    " SuperTab plugin
-    " let g:SuperTabDefaultCompletionType = "context"
-    autocmd FileType *
-    \   if &omnifunc != ''
-    \|    call SuperTabChain(&omnifunc, "<c-p>")
-    \|    call SuperTabSetDefaultCompletionType("<c-x><c-u>")
-    \|  endif
-    " set wildmode=longest,list
-
-    let g:SuperTabMappingTabLiteral = "<leader><tab>"
-
-"++ SINTAXE (SYNTASTIC) +++++++++++++++++++++++++++++++++++++++++++++++
-    let g:syntastic_mode_map = { 'mode': 'passive' }
-    " Deixa o corretor de sintaxe syntastic funcionar no mod passivo,
-    " só podendo sendo processado ao chamar o comando "SyntaxCheck"
-    let g:syntastic_loc_list_height=5
-    " Tamanho da lista de erros do Syntastic
-    let g:syntastic_auto_loc_list=1
-    " Janela de erros abre ao checar, e fecha quando não há mais erros
-
-"++ BIOINFORMÁTICA ++++++++++++++++++++++++++++++++++++++++++++++++++++
-    augroup Bioinformatics
-        au BufNewFile,BufRead *.{fa,fasta}         setf fasta
-        au BufNewFile,BufRead *.faa                setf fasta_aa
-        au BufNewFile,BufRead *.{ffn,fna}          setf fasta_nt
-        au BufNewFile,BufRead *.{gff,gff3,gtf}     setf gff
-        au BufNewFile,BufRead *.{gbk,genbank}      setf genbank
-        au BufNewFile,BufRead *.{nex,nexus,nxs,nx} setf nexus
-    augroup end
-
-    " Usa tabulações em todos os arquivos gff
-    au BufNewFile,BufRead,Filetype *.{gff,gff3,gtf} set noexpandtab
 
 "++ FOLDING +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     autocmd BufWinLeave ?* mkview
@@ -158,6 +119,51 @@
 
     " Para Python, usar identação
     au FileType *.py setlocal foldmethod=indent
+
+"///////////////////////////////////////////////////////////////////////
+"----------------------------------------------------------------------
+"                             PLUGINS
+"----------------------------------------------------------------------
+"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+"++ PLUGINS (PATHOGEN) +++++++++++++++++++++++++++++++++++++++++++++++++
+    runtime bundle/pathogen/autoload/pathogen.vim
+    silent! call pathogen#infect()
+    silent! call pathogen#helptags()
+
+"++ SUPERTAB +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    " SuperTab plugin
+    " let g:SuperTabDefaultCompletionType = "context"
+    autocmd FileType *
+    \   if &omnifunc != ''
+    \|    call SuperTabChain(&omnifunc, "<c-p>")
+    \|    call SuperTabSetDefaultCompletionType("<c-x><c-u>")
+    \|  endif
+    " set wildmode=longest,list
+
+    let g:SuperTabMappingTabLiteral = "<leader><tab>"
+
+"++ SYNTASTIC +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    let g:syntastic_mode_map = { 'mode': 'passive' }
+    " Deixa o corretor de sintaxe syntastic funcionar no mod passivo,
+    " só podendo sendo processado ao chamar o comando "SyntaxCheck"
+    let g:syntastic_loc_list_height=5
+    " Tamanho da lista de erros do Syntastic
+    let g:syntastic_auto_loc_list=1
+    " Janela de erros abre ao checar, e fecha quando não há mais erros
+
+"++ BIOINFORMÁTICA ++++++++++++++++++++++++++++++++++++++++++++++++++++
+    augroup Bioinformatics
+        au BufNewFile,BufRead *.{fa,fasta}         setf fasta
+        au BufNewFile,BufRead *.faa                setf fasta_aa
+        au BufNewFile,BufRead *.{ffn,fna}          setf fasta_nt
+        au BufNewFile,BufRead *.{gff,gff3,gtf}     setf gff
+        au BufNewFile,BufRead *.{gbk,genbank}      setf genbank
+        au BufNewFile,BufRead *.{nex,nexus,nxs,nx} setf nexus
+    augroup end
+
+    " Usa tabulações em todos os arquivos gff
+    au BufNewFile,BufRead,Filetype *.{gff,gff3,gtf} set noexpandtab
 
 "++ ASSEMBLY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     au VimEnter,BufNewFile,BufRead *.asm exe "setf nasm"
@@ -190,7 +196,7 @@
         let g:Tex_EnvironmentMaps=0
         let g:Tex_EnvironmentMenus=0
 
-"++ Conque Terminal +++++++++++++++++++++++++++++++++++++++++++++++++++
+"++ CONQUE TERMINAL +++++++++++++++++++++++++++++++++++++++++++++++++++
 
     " Tipo de terminal (apenas Unix)
     "-------------------------------------------------------------
@@ -221,7 +227,6 @@
   \ ----+----1----+----2----+----3----+----4----+----5----+----6----+----7--
     iab CoM
   \ /** ***************************************************************/
-
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

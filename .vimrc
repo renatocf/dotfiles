@@ -255,19 +255,12 @@
 "++ DICIONÁRIO/ORTOGRAFIA E AUTOCOMPLETAMENTO 
     set dictionary=/home/verde/.ispell_br
 
-"++ LISTA DE TAGS (:TlistToggle): <F2> 
-    autocmd VimEnter *
-    \   if exists(":TlistToggle")
-    \|      exe "map <F2> :TlistToggle<CR>" 
-    \|      exe "let Tlist_Auto_Update = 1"
-    \|      exe "map <s-F2> :TlistUpdate<CR>" 
-    \|      exe "let Tlist_Exit_OnlyWindow = 1" 
-    \|      exe "let Tlist_Use_Right_Window = 1" 
-    \|      exe "let Tlist_File_Fold_Auto_Close = 1"
-    \|  elseif exists(":TagbarToggle")
-    \|      exe "map <F2> :TagbarToggle<CR>" 
+"++ FILE EXPLORER: <F2>
+    autocmd VimEnter * 
+    \   if exists(":NERDTreeToggle") 
+    \|      exe "map <F2> :call Resize('NERDTreeToggle', 30, 0)<cr>" 
     \|  else
-    \|      exe "echo 'No Tag list manager avaiable'"
+    \|      exe "map <F2> :Vex!<CR>"
     \|  endif
     
 "++ COMPILADOR (:make): <F3> 
@@ -283,12 +276,19 @@
     "Leva ao erro anterior do :make
     map cp <esc>:cp<cr>         
 
-"++ FILE EXPLORER: <F4>
-    autocmd VimEnter * 
-    \   if exists(":NERDTreeToggle") 
-    \|      exe "map <F4> :call Resize('NERDTreeToggle', 30, 0)<cr>" 
+"++ LISTA DE TAGS (:TlistToggle): <F4> 
+    autocmd VimEnter *
+    \   if exists(":TlistToggle")
+    \|      exe "map <F4> :TlistToggle<CR>" 
+    \|      exe "let Tlist_Auto_Update = 1"
+    \|      exe "map <s-F4> :TlistUpdate<CR>" 
+    \|      exe "let Tlist_Exit_OnlyWindow = 1" 
+    \|      exe "let Tlist_Use_Right_Window = 1" 
+    \|      exe "let Tlist_File_Fold_Auto_Close = 1"
+    \|  elseif exists(":TagbarToggle")
+    \|      exe "map <F4> :TagbarToggle<CR>" 
     \|  else
-    \|      exe "map <F4> :Vex!<CR>"
+    \|      exe "echo 'No Tag list manager avaiable'"
     \|  endif
 
 "++ ALTERNAR JANELAS: <F5>

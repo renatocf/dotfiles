@@ -99,6 +99,10 @@
     au InsertLeave  * if pumvisible() == 0 | silent! pclose | endif
     au CursorMovedI * if pumvisible() == 0 | silent! pclose | endif
 
+"++ ESPAÇOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    autocmd FileType c,cpp,java,php,python,perl,ruby
+    \   autocmd BufWritePre <buffer> :%s/\s\+$//e
+
 "++ FOLDING +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     autocmd BufWinLeave ?* mkview
     autocmd BufWinEnter ?* silent loadview

@@ -25,12 +25,14 @@ doc/tags
 *.tar
 *.zip
 
-# Logs and databases #
-######################
+# Logs #
+########
 *.log
-*.sql
 *.todo
-*.sqlite
+
+# Vim metadata #
+################
+*.sw*
 
 # OS generated files #
 ######################

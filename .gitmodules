@@ -70,6 +70,3 @@
 [submodule ".vim/bundle/vim-conque"]
 	path = .vim/bundle/vim-conque
 	url = ssh://git@github.com:22/basepi/vim-conque.git
-[submodule "vim-abolish"]
-	path = vim-abolish
-	url = ssh://git@github.com:22/tpope/vim-abolish.git

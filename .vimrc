@@ -100,7 +100,7 @@
     au CursorMovedI * if pumvisible() == 0 | silent! pclose | endif
 
 "++ ESPAÇOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    autocmd FileType c,cpp,java,php,python,perl,ruby
+    autocmd FileType c,cpp,java,php,python,perl,ruby,javascript
     \   autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 "++ FOLDING +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -259,7 +259,6 @@
 "   <F7>: (V)   comenta/descomenta código
 "   <F8>: (A)   compilação do código (sem make)
 "   <F9>: (A)   compilação e execução do código (sem make)
-
 
 "++ DICIONÁRIO/ORTOGRAFIA E AUTOCOMPLETAMENTO
     set dictionary=/home/verde/.ispell_br

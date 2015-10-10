@@ -51,7 +51,7 @@
     set tabstop=4     " Tamanho real da tabulação com 4 espaços
     set expandtab     " Troca tabulações por espaços
     set linebreak     " Quebra de linha extensa só em final de palavra
-    set textwidth=72  " 72 de largura máxima (coisa de cartão perfurado)
+    set textwidth=80  " 80 de largura máxima (coisa de cartão perfurado)
     set shiftwidth=4  " Identação com 4 espaços de tabulação
     set softtabstop=4 " Tamanho aparente da tabulação com 4 espaços
 

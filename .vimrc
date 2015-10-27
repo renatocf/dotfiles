@@ -69,11 +69,6 @@
     hi    Search ctermbg=green ctermfg=black
     hi IncSearch ctermbg=black ctermfg=cyan
 
-"++ POSIÇÃO DO CURSOR ++++++++++++++++++++++++++++++++++++++++++++++++++
-    " Guarda posicao do cursor e histórico da linha de comando:
-    set viminfo='10,\"30,:40,%,n~/.viminfo
-    au BufReadPost * if line("'\"")|execute("normal `\"")|endif
-
 "++ STATUSLINE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     set statusline=%t                " Nome do arquivo
     set statusline+=\ \ \ [          " Limite formato/decod.

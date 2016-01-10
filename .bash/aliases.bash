@@ -21,6 +21,9 @@ alias l='ls -CF'
 
 # jobs management
 alias jobs='jobs -l'
+
+# text editors
+if which nvim &> /dev/null; then alias vim='nvim'; fi
 alias vi='vim'
 
 # Opening stuff by ssh

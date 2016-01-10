@@ -59,8 +59,6 @@
     set diffopt=filler,iwhite   " Ignorar espaços em branco
     set hlsearch                " highlight na pesquisa
     set incsearch               " Pesquisa enquanto digita
-    set ignorecase              " Procurar ignorando diferenças de
-                                " maiúsculas/minúsculas
 
     " Arquivos ignorados ao exandir busca por arquivos
     set wildignore=*.swp,*.class,*.exe,*.o,*obj
@@ -329,6 +327,20 @@
 "++ RECARREGAR VIMRC: <F12>
     au BufNewFile,BufReadPost,Filetype * call Recharge_vimrc()
 
+"++ MOVER LINHAS: <A-*>
+    nnoremap <C-k> :m .-2<CR>==
+    nnoremap <C-j> :m .+1<CR>==
+    inoremap <C-k> <Esc>:m .-2<CR>==gi
+    inoremap <C-j> <Esc>:m .+1<CR>==gi
+    vnoremap <C-k> :m '<-2<CR>gv=gv
+    vnoremap <C-j> :m '>+1<CR>gv=gv
+    
+    nnoremap <C-Up> :m .-2<CR>==
+    nnoremap <C-Down> :m .+1<CR>==
+    inoremap <C-Up> <Esc>:m .-2<CR>==gi
+    inoremap <C-Down> <Esc>:m .+1<CR>==gi
+    vnoremap <C-Up> :m '<-2<CR>gv=gv
+    vnoremap <C-Down> :m '>+1<CR>gv=gv
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

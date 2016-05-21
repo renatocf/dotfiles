@@ -102,3 +102,4 @@ iab _PROD_INTERNO_  ⟨⟩
 
 "---- CÁLCULO
 iab _DEL_           ∂
+iab _VEZES_         ×

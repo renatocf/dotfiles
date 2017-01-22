@@ -1,5 +1,3 @@
-;;; Lisp (SLIME) interaction 
-(setq inferior-lisp-program "clisp") 
-(add-to-list 'load-path "~/.slime") 
-(require 'slime) 
-(slime-setup)
+(setq inhibit-startup-screen t)
+(global-linum-mode t)
+(setq linum-format "%4d ")

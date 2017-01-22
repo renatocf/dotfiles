@@ -1,8 +1,6 @@
-# .GITIGNORE MADE TO DOT FILES
-# Author: Renato Cordeiro Ferreira
+# '.gitignore' made for dotfiles
 
-# First of all, ignore everything
-# in your directory
+# First of all, ignore everything in your directory
 *
 
 # Now, let's make git looks to the dot files
@@ -14,19 +12,21 @@
 # Git files (including this .gitignore)
 !.gitconfig
 !.gitignore
-!.gitmodules
 !.gitignore_global
 
 # Vim files (.vimrc and .vim directory)
 !.vim/
-!.vim/*
 !.vimrc
-.vim/.netrwhist
 
-# Bash files (.bashrc and .bash directory)
-!.bash/
+# Emacs files (.emacs)
+!.emacs
+
+# Bash files (.bashrc and .profile)
 !.bashrc
 !.profile
+!.bash_aliases
+!.bash_helpers
+!.bash_profile
 
 # Mercurial file (.hgrc)
-!.hgrc
+!.hgr

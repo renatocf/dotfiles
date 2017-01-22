@@ -1,0 +1,123 @@
+# ~/.bash_aliases
+
+# Extract many compressed files
+# (based on https://wiki.archlinux.org/index.php/Bash/Functions)
+extract() {
+    local c e i
+
+    (($#)) || return
+
+    for i; do
+        c=''
+        e=1
+
+        if [[ ! -r $i ]]; then
+            echo "$0: file is unreadable: \`$i'" >&2
+            continue
+        fi
+
+        case $i in
+            *.t@(gz|lz|xz|b@(2|z?(2))|a@(z|r?(.@(Z|bz?(2)|gz|lzma|xz)))))
+                   c=(bsdtar xvf);;
+            *.7z)  c=(7z x);;
+            *.Z)   c=(uncompress);;
+            *.bz2) c=(bunzip2);;
+            *.exe) c=(cabextract);;
+            *.gz)  c=(gunzip);;
+            *.rar) c=(unrar x);;
+            *.xz)  c=(unxz);;
+            *.zip) c=(unzip);;
+            *)     echo "$0: unrecognized file extension: \`$i'" >&2
+                   continue;;
+        esac
+
+        command "${c[@]}" "$i"
+        ((e = e || $?))
+    done
+    return "$e"
+}
+
+# Make cd and ls in a single command
+# (based on https://wiki.archlinux.org/index.php/Bash/Functions)
+cl() {
+  local dir="$1"
+  local dir="${dir:=$HOME}"
+  if [[ -d "$dir" ]]; then
+    cd "$dir" >/dev/null; ls
+  else
+    echo "bash: cl: $dir: Directory not found"
+  fi
+}
+
+# Create simple notes to be read later
+# (based on https://wiki.archlinux.org/index.php/Bash/Functions)
+note () {
+    # If file doesn't exist, create it
+    if [[ ! -f $HOME/.notes ]]; then
+        touch "$HOME/.notes"
+    fi
+
+    if ! (($#)); then
+        # No arguments, print file
+        cat "$HOME/.notes"
+    elif [[ "$1" == "-c" ]]; then
+        # Clear file
+        printf "%s" > "$HOME/.notes"
+    else
+        # add all arguments to file
+        printf "%s\n" "$*" >> "$HOME/.notes"
+    fi
+}
+
+# Get info of ip address and host
+# (based on https://wiki.archlinux.org/index.php/Bash/Functions)
+ipif() {
+    if grep -P "(([1-9]\d{0,2})\.){3}(?2)" <<< "$1"; then
+        curl ipinfo.io/"$1"
+    else
+        ipawk=($(host "$1" | awk '/address/ { print $NF }'))
+        curl ipinfo.io/${ipawk[1]}
+    fi
+    echo
+}
+
+# Make a simple calculation using bc
+# (based on https://wiki.archlinux.org/index.php/Bash/Functions)
+calc() {
+    echo "scale=3;$@" | bc -l
+}
+
+# List ANSI escape codes for terminal colors
+# (based on http://wiki.bash-hackers.org/scripting/terminalcodes)
+ansi_colors() {
+    for a in 0 1 4 5 7; do
+        echo "a=$a " 
+        for (( f=0; f<=9; f++ )) ; do
+            for (( b=0; b<=9; b++ )) ; do
+                #echo -ne "f=$f b=$b" 
+                echo -ne "\\033[${a};3${f};4${b}m"
+                echo -ne "\\\\\\\\033[${a};3${f};4${b}m"
+                echo -ne "\\033[0m "
+            done
+            echo
+        done
+        echo
+    done
+    echo
+}
+
+alias colors="ansi_colors | less -R"
+
+# Make history and grep in a single comamnd
+h () {
+    if [[ "$1" =~ ^[0-9]*$ ]]; then
+        # When providing a number, print N lines
+        history $1
+    elif [ -n "$2" ] && [[ "$2" =~ ^[0-9]*$ ]]; then
+        # For a number + a key, print N lines with 'key'
+        history | grep $1 | tail -n $2 | grep $1
+    else
+        # For just a key, prin all entries to it
+        history | grep $1
+    fi
+}

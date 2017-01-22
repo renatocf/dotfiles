@@ -1,13 +1,13 @@
-"++ MATEMÁTICA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    "Símbolos matemáticos de todos os tipos possíveis
+" math.vim
+" Abbreviations for math symbols (in portuguese)
 
-"---- OPERADORES
+"-- Operators
 iab _RAIZ_          √
 iab _MAIS_MENOS_    ±
 iab _TENSORIAL_     ⊗
 iab _SOMA_DIRETA_   ⊕
 
-"---- FLECHAS
+"-- Arrows
 iab _CIMA_          ↑
 iab _BAIXO_         ↓ 
 iab _DIR_           →
@@ -19,18 +19,18 @@ iab _ESQ_BAIXO_     ↙
 iab _CIMA_BAIXO_    ↕
 iab _DIR_ESQ_       ↔
 
-"---- RETICÊNCIAS
-iab _H_RET_          …
+"-- Suspension points
+iab _H_RET_         …
 iab _V_RET_         ⋮
 
-"---- FLECHAS DUPLAS
+"-- Double arrows
 iab _DUPLA_CIMA_    ⇑
 iab _DUPLA_BAIXO_   ⇓
 iab _DUPLA_ESQ_     ⇐ 
 iab _DUPLA_DIR_     ⇒
 iab _DUPLA_ESQ_DIR_ ⇔
 
-"---- LÓGICA
+"-- LOGIC
 iab _E_             ∧
 iab _OU_            ∨
 iab _XOR_           ⊕
@@ -53,7 +53,7 @@ iab _PORTANTO_      ∴
 iab _PORQUE_        ∵
 iab _SE_SO_SE_      ↔
 
-"---- COMPARAÇÃO
+"-- Comparison
 iab _DIFERENTE_     ≠
 iab _APROX_         ≈
 iab _CONGRUENTE_    ≅
@@ -61,7 +61,7 @@ iab _EQUIVALENTE_   ≡
 iab _MAIOR_IGUAL_   ≥
 iab _MENOR_IGUAL_   ≤
 
-"---- CÁLCULO
+"-- Calculus
 iab _FUNCAO_COMP_   ∘
 iab _INFINITO_      ∞
 iab _DIFERENCIAL_   ∂
@@ -70,8 +70,10 @@ iab _INTEGRAL_      ∫
 iab _INTEG_LINHA_   ∮
 iab _SOMATORIO_     ∑
 iab _PRODUTORIO_    ∏
+iab _DEL_           ∂
+iab _VEZES_         ×
 
-"---- CONJUNTOS
+"-- Mathematical sets
 iab _VAZIO_         ∅
 iab _NATURAIS_      ℕ
 iab _INTEIROS_      ℤ
@@ -79,7 +81,7 @@ iab _RACIONAIS_     ℚ
 iab _REAIS_         ℝ
 iab _COMPLEXOS_     ℂ
 
-"---- CONJUNTÍSTICA
+"-- Set operators
 iab _PERTENCE_      ∈
 iab _PERTENCENTE_   ∈
 iab _NAO_PERTENCE_  ∉
@@ -92,14 +94,10 @@ iab _INTER_         ∩
 iab _G_UNIAO_       ⋃
 iab _G_INTER_       ⋂
 
-"---- APROXIMAÇÕES
-iab _TETO_ ⌈⌉
-iab _CHAO_ ⌊⌋
+"-- Approximations
+iab _TETO_          ⌈⌉
+iab _CHAO_          ⌊⌋
 
-"---- ÁLGEBRA LINEAR
+"-- Linear algebra
 iab _ORTOGONAL_     ⊥
 iab _PROD_INTERNO_  ⟨⟩
-
-"---- CÁLCULO
-iab _DEL_           ∂
-iab _VEZES_         ×

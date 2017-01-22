@@ -1,407 +1,197 @@
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
-"                            CONFIGURAÇÕES
+"                            CONFIGURATIONS
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 "++ DEBIAN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    " Esta linha não deve ser removida para garantir que várias
-    " opções estão apropriadamente selecionadas para trabalhar
-    " com os pacotes Vim disponíveis no Debian.
-    runtime! debian.vim
+" This line should not be removed to guarantee that many options are
+" appropriately selected to work with Vim packages available in Debian
+runtime! debian.vim
 
 "++ SYNTAX HIGHLIGHTING ++++++++++++++++++++++++++++++++++++++++++++++++
-    " Vim5 and versões mais antigas dão suporte a syntax highlighting.
-    " Esta linha ativa a syntax highlighting por padrão se disponível
-    if has("syntax")
-		syntax on
-    endif
+" This line enables syntax highlighting
+if has('syntax')
+    syntax on
+endif
 
-"++ VIMRC.LOCAL ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    " Ativa o arquivo de configuração global se disponível
-    if filereadable("/etc/vim/vimrc.local")
-		source /etc/vim/vimrc.local
-    endif
+"++ BASIC OPTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+set ruler                 " Put a ruler in the footer
+set title                 " Change the terminal title
+set number                " Add numbers in the lines
+set autowrite             " Save before commands that jump between files
+set backspace=2           " Make backspace act as in other programs
+set nocompatible          " Enable resources better than VI's
+set background=dark       " Set dark background by default
 
-"++ OPÇÕES GERAIS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    set ruler           " Linhas e colunas no rodapé
-    set title           " Muda o título do terminal
-    set number          " Números no início das linhas
-    set autowrite       " Salva (:w) antes de :next e :make
-    set backspace=2     " Backspace age como em outros programas
-    set nocompatible	" Permite recursos maiores que os do VI
-    set background=dark " Fundo escuro (quem usa terminal branco?)
+"++ IDENTATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+filetype plugin indent on " Enable Identation for different languages
+set wrap                  " Show big lines without horizontal rolling
+set tabstop=2             " Make tabstop be 2 spaces by default
+set expandtab             " Change tabs by spaces
+set linebreak             " Wrap lines only in the end of words
+set textwidth=80          " 80 columns as maximum width
+set shiftwidth=0          " Make autoindent space equal to 'tabstop'
+set matchpairs+=<:>       " Also match < and > (for C++ mainly)
 
-"++ PADRÃO DE CARACTERES +++++++++++++++++++++++++++++++++++++++++++++++
-    if has("multi_byte")
-    	" Mude o padrão do código dos caracteres utilizados no Vim. Em
-    	" geral, utf-8 (Unicode Transfer Format 8) consegue exibir a
-    	" maioria das línguas. É importante, porém, checar se a opção
-    	" +multi_byte está disponível ao digitar :version dentro do Vim.
-    	" Se esta opção estiver indisponível ('-multi_byte'), recompile
-    	" a partir do código (./configure --enable-multibyte)
-		set encoding=utf-8
-		set fileencoding=utf-8
-        set termencoding=utf-8 "Emuladores xterm com utf-8.
-    endif
+"++ SEARCH +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+set diffopt=filler,iwhite " Ignore blang spaces
+set hlsearch              " highlight in search
+set incsearch             " Search while typing
 
-"++ IDENTAÇÃO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    filetype plugin indent on   " Identações para diferentes linguagnes
-    set wrap          " Linhas grandes exibidas sem rolagem horizontal
-    set tabstop=4     " Tamanho real da tabulação com 4 espaços
-    set expandtab     " Troca tabulações por espaços
-    set linebreak     " Quebra de linha extensa só em final de palavra
-    set textwidth=80  " 80 de largura máxima (coisa de cartão perfurado)
-    set shiftwidth=4  " Identação com 4 espaços de tabulação
-    set softtabstop=4 " Tamanho aparente da tabulação com 4 espaços
+" Ignore filetypes when searching for files
+set wildignore=*.swp,*.class,*.exe,*.o,*obj
 
-"++ PESQUISA +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    set diffopt=filler,iwhite   " Ignorar espaços em branco
-    set hlsearch                " highlight na pesquisa
-    set incsearch               " Pesquisa enquanto digita
-
-    " Arquivos ignorados ao exandir busca por arquivos
-    set wildignore=*.swp,*.class,*.exe,*.o,*obj
-
-    " Cores especiais para pesquisa normal/incremental
-    hi    Search ctermbg=green ctermfg=black
-    hi IncSearch ctermbg=black ctermfg=cyan
-
-"++ STATUSLINE +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    set statusline=%t                " Nome do arquivo
-    set statusline+=\ \ \ [          " Limite formato/decod.
-    set statusline+=%{strlen(&fenc)?
-                    \&fenc:'none'}   " Codificação
-    set statusline+=,                " Separador formato/decod.
-    set statusline+=%{&ff}           " Formato do arquivo
-    set statusline+=]                " Limite formato/decod.
-    set statusline+=%h               " Sinal de ajuda   [help]
-    set statusline+=%m               " Sinal modificado [+]
-    set statusline+=%r               " Sinal só-leitura [RO]
-    set statusline+=%y               " Formato do arquivo
-    set statusline+=%{fugitive#statusline()}
-    set statusline+=%=               " Separador direita/esquerda
-    set statusline+=%c,              " Coluna do cursos
-    set statusline+=%l/%L            " Linha do cursor/total de linhas
-    set statusline+=\ \ \ \ %P       " Porcentagem na tela
-
-"++ JANELA DE POPUP ++++++++++++++++++++++++++++++++++++++++++++++++++++
-    " Janela de popup mais completa
-    set completeopt=menuone,menu,longest,preview
-    " Abre/fecha automaticamente a janela do menu popup
-    au InsertLeave  * if pumvisible() == 0 | silent! pclose | endif
-    au CursorMovedI * if pumvisible() == 0 | silent! pclose | endif
-
-"++ ESPAÇOS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    autocmd FileType c,cpp,java,php,python,perl,ruby,javascript
-    \   autocmd BufWritePre <buffer> :%s/\s\+$//e
-
-"++ FOLDING +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    autocmd BufWinLeave ?* mkview
-    autocmd BufWinEnter ?* silent loadview
-
-    set foldmethod=syntax
-    set foldlevelstart=1
-
-    " Javascript, Perl, PHP, R, Ruby, Shellscript, Vimscript e XML
-    " suportam folding baseado na identação
-    let javaScript_fold=1         " JavaScript
-    let perl_fold=1               " Perl
-    let php_folding=1             " PHP
-    let r_syntax_folding=1        " R
-    let ruby_fold=1               " Ruby
-    let sh_fold_enabled=1         " sh
-    let vimsyn_folding='af'       " Vim script
-    let xml_syntax_folding=1      " XML
-
-    " Para Python, usar identação
-    au FileType *.py setlocal foldmethod=indent
+" Set special colors for incremental/normal search
+hi    Search ctermbg=green ctermfg=black
+hi IncSearch ctermbg=black ctermfg=cyan
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
-"                             PLUGINS
+"                              PLUGINS
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-"++ PLUGINS (PATHOGEN) +++++++++++++++++++++++++++++++++++++++++++++++++
-    runtime bundle/pathogen/autoload/pathogen.vim
-    silent! call pathogen#infect()
-    silent! call pathogen#helptags()
+"++ INSTALLATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-"++ SUPERTAB +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    " SuperTab plugin
-    " let g:SuperTabDefaultCompletionType = "context"
-    autocmd FileType *
-    \   if &omnifunc != ''
-    \|    call SuperTabChain(&omnifunc, "<c-p>")
-    \|    call SuperTabSetDefaultCompletionType("<c-x><c-u>")
-    \|  endif
-    " set wildmode=longest,list
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 
-    let g:SuperTabMappingTabLiteral = "<leader><tab>"
+" Start list of plugins
+" Check interesting stuff at http://vimawesome.com/
+call plug#begin('~/.vim/plugged')
 
-"++ SYNTASTIC +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    let g:syntastic_mode_map = { 'mode': 'passive' }
-    " Deixa o corretor de sintaxe syntastic funcionar no mod passivo,
-    " só podendo sendo processado ao chamar o comando "SyntaxCheck"
-    let g:syntastic_loc_list_height=5
-    " Tamanho da lista de erros do Syntastic
-    let g:syntastic_auto_loc_list=1
-    " Janela de erros abre ao checar, e fecha quando não há mais erros
+" General-purpose plugins
+Plug 'nacitar/a.vim'
+Plug 'viklund/bio-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'vim-syntastic/syntastic'
+Plug 'dkprice/vim-easygrep'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
+Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
-"++ BIOINFORMÁTICA ++++++++++++++++++++++++++++++++++++++++++++++++++++
-    augroup Bioinformatics
-        au BufNewFile,BufRead *.{fa,fasta}         setf fasta
-        au BufNewFile,BufRead *.faa                setf fasta_aa
-        au BufNewFile,BufRead *.{ffn,fna}          setf fasta_nt
-        au BufNewFile,BufRead *.{gff,gff3,gtf}     setf gff
-        au BufNewFile,BufRead *.{gbk,genbank}      setf genbank
-        au BufNewFile,BufRead *.{nex,nexus,nxs,nx} setf nexus
-    augroup end
+" Filetype-specific plugins
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
-    " Usa tabulações em todos os arquivos gff
-    au BufNewFile,BufRead,Filetype *.{gff,gff3,gtf} set noexpandtab
+" Clang-dependent plugins
+Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
+Plug 'rdnetto/ycm-generator', { 'branch': 'stable'}
 
-"++ ASSEMBLY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    au VimEnter,BufNewFile,BufRead *.asm exe "setf nasm"
+if has('nvim')
+    Plug 'arakashic/chromatica.nvim', {
+        \ 'for': ['c', 'cpp', 'objc', 'objcpp'] }
+else
+    Plug 'jeaye/color_coded', {
+        \ 'do': 'cmake . && make && make install',
+        \ 'for': ['c', 'cpp', 'objc', 'objcpp'] }
+endif
 
-"++ LaTeX +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+" End list of plugins
+call plug#end()
 
-    " Aplicações requeridas pelo plugin vim-latex
-    "-------------------------------------------------------------
-        " 1: Vim-latex com 'grep' que gera o nome do arquivo
-        set grepprg=grep\ -nH\ $*
+"++ FLAGS (YouCompleteMe) ++++++++++++++++++++++++++++++++++++++++++++++
 
-        " 2: Faz com que os arquivos .tex sejam carregados como
-        "    'tex' e não como 'plaintext' ao serem criados
-        let g:tex_flavor='latex'
+let g:ycm_register_as_syntastic_checker = 1
 
-    " Configurações para o meu vim-latex
-    "-------------------------------------------------------------
-        let g:Tex_DefaultTargetFormat='pdf' " latexpdf como padrão
-        let g:Tex_BibtexFlavor = 'bibtex'   " bibtex como formato
-        let g:Tex_BIBINPUTS = "%\.bib"      " favorito de ciração
+let g:ycm_enable_diagnostic_signs = 1
+let g:ycm_enable_diagnostic_highlighting = 0
 
-    " Desabilitando atalhos que atrapalham os acentos...
-    "-------------------------------------------------------------
-        let g:Tex_FontMaps=0
-        let g:Tex_FontMenus=0
-        let g:Tex_SectionMaps=0
-        let g:Tex_SectionMenus=0
-        let g:Tex_AdvancedMath = 0   " desabilitando o ~a criar
-                                     " mathcal ou \cite
-        let g:Tex_EnvironmentMaps=0
-        let g:Tex_EnvironmentMenus=0
+let g:ycm_always_populate_location_list = 1
+let g:ycm_open_loclist_on_ycm_diags = 1
 
-"++ CONQUE TERMINAL +++++++++++++++++++++++++++++++++++++++++++++++++++
+let g:ycm_complete_in_strings = 1
 
-    " Tipo de terminal (apenas Unix)
-    "-------------------------------------------------------------
-        let g:ConqueTerm_TERM = 'xterm'
+"++ FLAGS (Chromatica) +++++++++++++++++++++++++++++++++++++++++++++++++
 
-    " Fecha o terminal ao encerrar o programa
-    "-------------------------------------------------------------
-        let g:ConqueTerm_CloseOnEnd = 1
-
-    " Continua lendo a saída do terminal
-    "-------------------------------------------------------------
-        let g:ConqueTerm_ReadUnfocused = 1
+let g:chromatica#enable_at_startup = 1
+let g:chromatica#highlight_feature_level = 1
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
-"                               ABREVIAÇÕES
+"                             ABBREVIATIONS
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-"++ ARQUIVO ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    " Abreviacoes uteis para salvar/sair
-    cab W w | cab Q q | cab Wq wq | cab wQ wq | cab WQ wq
-    cab Wa wa | cab Qa qa | cab Wqa wqa | cab wQa wqa | cab wqA wqa
-    cab WQa wqa | cab WqA wqa | cab wQA wqa | cab WQA wqa
+" Abbreviations useful to save and exit
+cab W w | cab Q q | cab Wq wq | cab wQ wq | cab WQ wq
+cab Wa wa | cab Qa qa | cab Wqa wqa | cab wQa wqa | cab wqA wqa
+cab WQa wqa | cab WqA wqa | cab wQA wqa | cab WQA wqa
 
-"++ RÉGUA E COMENTÁRIO (TAMANHO 72) ++++++++++++++++++++++++++++++++++++
-    iab RuL
-  \ ----+----1----+----2----+----3----+----4----+----5----+----6----+----7--
-    iab CoM
-  \ /** ***************************************************************/
+" Rule to measure columns (size 80)
+iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7----+----8
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
-"                               MAPEAMENTOS
+"                                MAPPINGS
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-"Os seguintes mapeamentos estão listados nesta seção:
-"
-"   |-------------------------------------------|
-"   | LEGENDA:                                  |
-"   | (I) Funciona no modo de inserção          |
-"   | (V) Funciona no modo visual               |
-"   | (A) Funciona nos modos normal e visual    |
-"   |-------------------------------------------|
-"
-"   <TAB>:    (I) Avança para baixo na lista de autocompletamento
-"   <S-TAB>:  (I) Avança para cima na lista de autocompletamento
-"   '<TAB>:   (I) Adiciona tabulação
-"
-"   <F2>: (A)   janela com lista de tags
-"   <F3>: (A)   janela de erros do comando :make
-"   <F4>: (A)   janela de navegação em pastas
-"   <F5>: (A/I) troca de buffers (para múltiplas janelas abertas)
-"   <F6>: (A)   esconde/revela os comentários
-"   <F7>: (V)   comenta/descomenta código
-"   <F8>: (A)   compilação do código (sem make)
-"   <F9>: (A)   compilação e execução do código (sem make)
+"++ File explorer: <F2>
+map <F2> :NERDTreeToggle<cr>
 
-"++ DICIONÁRIO/ORTOGRAFIA E AUTOCOMPLETAMENTO
-    set dictionary=/home/verde/.ispell_br
+"++ File explorer: <F4>
+map <F4> :TagbarToggle<cr>
 
-"++ FILE EXPLORER: <F2>
-    autocmd VimEnter *
-    \   if exists(":NERDTreeToggle")
-    \|      exe "map <F2> :call Resize('NERDTreeToggle', 30, 0)<cr>"
-    \|  else
-    \|      exe "map <F2> :Vex!<CR>"
-    \|  endif
+"++ Move lines: <A-*>
+nnoremap <C-k> :m .-2<CR>==
+nnoremap <C-j> :m .+1<CR>==
+nnoremap <C-Up> :m .-2<CR>==
+nnoremap <C-Down> :m .+1<CR>==
 
-"++ COMPILADOR (:make): <F3>
-    "Abre lista de erros do :make
-    autocmd BufNewFile,BufRead *
-    \   if exists(":Errors")
-    \|      exe "map <F3> <esc>:w<cr>:SyntasticCheck<cr>"
-    \|      exe "imap <F3> <esc>:w<cr>:SyntasticCheck<cr>i"
-    \|  else
-    \|      exe "map <F3> <esc>:call Makerr()<cr>"
-    "Leva ao próximo erro do :make
-    map cn <esc>:cn<cr>
-    "Leva ao erro anterior do :make
-    map cp <esc>:cp<cr>
+inoremap <C-k> <Esc>:m .-2<CR>==gi
+inoremap <C-j> <Esc>:m .+1<CR>==gi
+inoremap <C-Up> <Esc>:m .-2<CR>==gi
+inoremap <C-Down> <Esc>:m .+1<CR>==gi
 
-"++ LISTA DE TAGS (:TlistToggle): <F4>
-    autocmd VimEnter *
-    \   if exists(":TlistToggle")
-    \|      exe "map <F4> :TlistToggle<CR>"
-    \|      exe "let Tlist_Auto_Update = 1"
-    \|      exe "map <s-F4> :TlistUpdate<CR>"
-    \|      exe "let Tlist_Exit_OnlyWindow = 1"
-    \|      exe "let Tlist_Use_Right_Window = 1"
-    \|      exe "let Tlist_File_Fold_Auto_Close = 1"
-    \|  elseif exists(":TagbarToggle")
-    \|      exe "map <F4> :TagbarToggle<CR>"
-    \|  else
-    \|      exe "echo 'No Tag list manager avaiable'"
-    \|  endif
+vnoremap <C-k> :m '<-2<CR>gv=gv
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-Up> :m '<-2<CR>gv=gv
+vnoremap <C-Down> :m '>+1<CR>gv=gv
 
-"++ ALTERNAR JANELAS: <F5>
-    map <F5> <c-w><c-w>
-    imap <F5> <esc><c-w><c-w>i
+"++ Change of context: <A-*>
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+nnoremap <A-h> <C-w>h
+nnoremap <A-l> <C-w>l
+nnoremap <A-Up> <C-w>k
+nnoremap <A-Down> <C-w>j
+nnoremap <A-Left> <C-w>h
+nnoremap <A-Right> <C-w>l
 
-"++ ESCONDER COMENTÁRIOS: <F6>
-    map <F6> :call CommOnOff()<cr>
+inoremap <A-k> <Esc><C-w>k
+inoremap <A-j> <Esc><C-w>j
+inoremap <A-h> <Esc><C-w>h
+inoremap <A-l> <Esc><C-w>l
+inoremap <A-Up> <Esc><C-w>k
+inoremap <A-Down> <Esc><C-w>j
+inoremap <A-Left> <Esc><C-w>h
+inoremap <A-Right> <Esc><C-w>l
 
-"++ COMENTÁRIOS: <F7>
-    autocmd VimEnter *
-    \   if exists(":TComment")
-    \|      exe "map <F7> :TComment<CR>"
-    \|      exe "imap <F7> :TComment<CR>"
-    \|  else
-    \|      exe ":echo 'No identation plugin instaled'"
-    \|  endif
+vnoremap <A-k> <Esc><C-w>k
+vnoremap <A-j> <Esc><C-w>j
+vnoremap <A-h> <Esc><C-w>h
+vnoremap <A-l> <Esc><C-w>l
+vnoremap <A-Up> <Esc><C-w>k
+vnoremap <A-Down> <Esc><C-w>j
+vnoremap <A-Left> <Esc><C-w>h
+vnoremap <A-Right> <Esc><C-w>l
 
-"++ COMPILAÇÃO DO CÓDIGO (SEM MAKE): <F8>
-    autocmd VimEnter *
-    \   if exists(":SCCompile")
-    \|      exe "map <F8> :SCCompile<CR>"
-    \|  else
-    \|      exe ":echo 'No compiler plugin instaled'"
-    \|  endif
+if has('nvim')
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-l> <C-\><C-n><C-w>l
+    tnoremap <A-Up> <C-\><C-n><C-w>k
+    tnoremap <A-Down> <C-\><C-n><C-w>j
+    tnoremap <A-Left> <C-\><C-n><C-w>h
+    tnoremap <A-Right> <C-\><C-n><C-w>l
 
-"++ COMPILAÇÂO E EXECUÇÃO DO CÓDIGO (SEM MAKE): <F9>
-    autocmd VimEnter *
-    \   if exists(":SCCompileRun")
-    \|      exe "map <F9> :SCCompileRun<CR>"
-    \|  else
-    \|      exe ":echo 'No compiler plugin instaled'"
-    \|  endif
-
-"++ RECARREGAR VIMRC: <F12>
-    au BufNewFile,BufReadPost,Filetype * call Recharge_vimrc()
-
-"++ MOVER LINHAS: <A-*>
-    nnoremap <C-k> :m .-2<CR>==
-    nnoremap <C-j> :m .+1<CR>==
-    inoremap <C-k> <Esc>:m .-2<CR>==gi
-    inoremap <C-j> <Esc>:m .+1<CR>==gi
-    vnoremap <C-k> :m '<-2<CR>gv=gv
-    vnoremap <C-j> :m '>+1<CR>gv=gv
-    
-    nnoremap <C-Up> :m .-2<CR>==
-    nnoremap <C-Down> :m .+1<CR>==
-    inoremap <C-Up> <Esc>:m .-2<CR>==gi
-    inoremap <C-Down> <Esc>:m .+1<CR>==gi
-    vnoremap <C-Up> :m '<-2<CR>gv=gv
-    vnoremap <C-Down> :m '>+1<CR>gv=gv
-
-"///////////////////////////////////////////////////////////////////////
-"----------------------------------------------------------------------
-"                               FUNÇÕES
-"----------------------------------------------------------------------
-"\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-"++ REDIMENSIONAMENTO DO TERMINAL ++++++++++++++++++++++++++++++++++++++
-    " Recebe como parâmetros uma string com o nome de uma função que
-    " causa um 'split' na tela, um tamanho para ser adicionado às co-
-    " lunas e outro para ser adicionado às linhas. Aumenta o terminal
-    " (se possível) para adicionar a nova janela.
-    function! Resize(function, col_add_size, lin_add_size)
-        " Execute function (avoid terminal changes without
-        " charging the function).
-        exe "silent " . a:function
-
-        " If there were modifications, restore terminal.
-        if exists("g:oldcolumn") || exists("g:oldline")
-            " Restore terminal to its old size
-            let &columns = g:oldcolumn
-            let &lines = g:oldline
-            " Delete existent variavles
-            unlet g:oldcolumn
-            unlet g:oldline
-        " In other cases, add 'v_size' and 'h_size' to its dimensions.
-        else
-            " Saving old size
-            let g:oldcolumn = &columns
-            let g:oldline   = &lines
-            " Modify terminal size
-            let &columns = g:oldcolumn + a:col_add_size
-            let &lines   = g:oldline + a:lin_add_size
-        endif
-    endfunction
-
-"++ JANELA DE ERROS MOSTRADOS PELO MAKE ++++++++++++++++++++++++++++++++
-    function! Makerr()
-        vertical botright 30 copen
-        echo " Make errors"
-    endfunction
-
-"++ ESCONDE COMENTÁRIOS ++++++++++++++++++++++++++++++++++++++++++++++++
-    " Oculta/mostra os comentários, alternadamente.
-    fu! CommOnOff()
-        if !exists('g:hiddcomm')
-            let g:hiddcomm=1 | hi Comment ctermfg=black guifg=black
-        else
-            unlet g:hiddcomm | hi Comment ctermfg=cyan  guifg=cyan term=bold
-        endif
-    endfu
-
-"++ RECARREGAR VIMRC +++++++++++++++++++++++++++++++++++++++++++++++++++
-    function! Recharge_vimrc()
-        if &term == "win32" || "pcterm" || has("gui_win32")
-           map ,v :e $HOME/_vimrc<CR>
-           nmap <F12> :<C-u>source ~/_vimrc
-            \ <BAR> echo "Vimrc recarregado!"<CR>
-        else
-           map ,v :e $HOME/.vimrc<CR>
-           nmap <F12> :<C-u>source ~/.vimrc
-            \ <BAR> echo "Vimrc recarregado!"<CR>
-        endif
-    endfunction
+    " Fix to enter a terminal buffer in terminal mode
+    autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
+endif

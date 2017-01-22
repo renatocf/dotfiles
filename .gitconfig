@@ -1,59 +1,58 @@
 [user]
-	name = Renato Cordeiro Ferreira
-	email = renato.cferreira@hotmail.com
+  name = Renato Cordeiro Ferreira
+  email = renato.cferreira@hotmail.com
 [credential]
-	helper = cache
+  helper = cache
 [core]
-	excludesfile = ~/.gitignore_global
+  excludesfile = ~/.gitignore_global
 [diff]
-    tool = vimdiff
+  tool = vimdiff
 [difftool]
-	prompt = false
+  prompt = false
 [merge]
-	stat = true
-	tool = vimdiff
+  stat = true
+  tool = vimdiff
 [mergetool]
-	prompt = false
+  prompt = false
 [branch "master"]
-    remote = origin
-    merge = refs/heads/master
+  remote = origin
+  merge = refs/heads/master
 
 ; Some nice alias
 [alias] 
-    web = instaweb --httpd apache2 ; apache2, if avaiable...
-    tree = log --graph --decorate --pretty=oneline --abbrev-commit
-    history = log --pretty=format:'%C(bold)[%h]%Creset %an, %ar:%n %C(yellow bold) %s %Creset' --stat
-	undo = reset --soft HEAD~1
-    unstage = reset HEAD
+  tree = log --graph --decorate --pretty=oneline --abbrev-commit
+  history = log --pretty=format:'%C(bold)[%h]%Creset %an, %ar:%n %C(yellow bold) %s %Creset' --stat
+  undo = reset --soft HEAD~1
+  unstage = reset HEAD
 
 ; Default colors. Bold is used to be easier 
 ; to see in black terminals
 [color]
-	ui = auto
+  ui = auto
 [color "diff"]
-    plain = normal
-    meta = bold
-    frag = cyan bold
-    old = red bold
-    new = green bold
-    commit = yellow bold
-    whitespace = normal red
+  plain = normal
+  meta = bold
+  frag = cyan bold
+  old = red bold
+  new = green bold
+  commit = yellow bold
+  whitespace = normal red
 [color "branch"]
-    current = green
-    local = normal
-    remote = red
-    plain = normal
+  current = green bold
+  local = normal
+  remote = red bold
+  plain = normal
 [color "status"]
-    header = normal
-    added = red bold
-    updated = green bold
-    changed = red bold
-    untracked = red bold
-    nobranch = red bold
+  header = normal
+  added = red bold
+  updated = green bold
+  changed = red bold
+  untracked = red bold
+  nobranch = red bold
 [color "grep"]
-    match = normal
+  match = normal
 [color "interactive"]
-    prompt = normal
-    header = normal
-    help = normal
-    error = normal
+  prompt = normal
+  header = normal
+  help = normal
+  error = red

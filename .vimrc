@@ -22,6 +22,7 @@ set number                " Add numbers in the lines
 set autowrite             " Save before commands that jump between files
 set backspace=2           " Make backspace act as in other programs
 set nocompatible          " Enable resources better than VI's
+set encoding=utf8         " Use UTF-8 as the default encoding
 set background=dark       " Set dark background by default
 
 "++ IDENTATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -39,8 +40,8 @@ set diffopt=filler,iwhite " Ignore blang spaces
 set hlsearch              " highlight in search
 set incsearch             " Search while typing
 
-" Ignore filetypes when searching for files
-set wildignore=*.swp,*.class,*.exe,*.o,*obj
+" Use better fonts for plugins
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 
 " Set special colors for incremental/normal search
 hi    Search ctermbg=green ctermfg=black
@@ -62,17 +63,22 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
 " General-purpose plugins
+Plug 'AnsiEsc.vim'
 Plug 'nacitar/a.vim'
+Plug 'kylef/apiblueprint.vim'
 Plug 'viklund/bio-vim'
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-Plug 'vim-syntastic/syntastic'
-Plug 'dkprice/vim-easygrep'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
+Plug 'vim-syntastic/syntastic'
 Plug 'tomtom/tcomment_vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-airline/vim-airline'
+Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-fugitive'
+Plug 'dietsche/vim-lastplace'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'in3d/vim-raml'
 Plug 'tpope/vim-surround'
 
 " Filetype-specific plugins
@@ -80,8 +86,11 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 " Clang-dependent plugins
-Plug 'valloric/youcompleteme', { 'do': './install.py --clang-completer' }
-Plug 'rdnetto/ycm-generator', { 'branch': 'stable'}
+Plug 'valloric/youcompleteme', {
+    \ 'do': './install.py --clang-completer',
+    \ 'for': ['c', 'cpp', 'objc', 'objcpp'] }
+Plug 'rdnetto/ycm-generator', {
+    \ 'branch': 'stable' }
 
 if has('nvim')
     Plug 'arakashic/chromatica.nvim', {
@@ -91,6 +100,9 @@ else
         \ 'do': 'cmake . && make && make install',
         \ 'for': ['c', 'cpp', 'objc', 'objcpp'] }
 endif
+
+" Icon plugins
+Plug 'ryanoasis/vim-devicons'
 
 " End list of plugins
 call plug#end()
@@ -110,7 +122,10 @@ let g:ycm_complete_in_strings = 1
 "++ FLAGS (Chromatica) +++++++++++++++++++++++++++++++++++++++++++++++++
 
 let g:chromatica#enable_at_startup = 1
-let g:chromatica#highlight_feature_level = 1
+
+"++ FLAGS (Devicons) +++++++++++++++++++++++++++++++++++++++++++++++++++
+
+let g:airline_powerline_fonts = 1
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

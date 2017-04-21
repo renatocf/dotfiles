@@ -87,8 +87,7 @@ Plug 'tpope/vim-rails', { 'for': 'ruby' }
 
 " Clang-dependent plugins
 Plug 'valloric/youcompleteme', {
-    \ 'do': './install.py --clang-completer',
-    \ 'for': ['c', 'cpp', 'objc', 'objcpp'] }
+    \ 'do': './install.py --clang-completer' }
 Plug 'rdnetto/ycm-generator', {
     \ 'branch': 'stable' }
 
@@ -109,15 +108,19 @@ call plug#end()
 
 "++ FLAGS (YouCompleteMe) ++++++++++++++++++++++++++++++++++++++++++++++
 
-let g:ycm_register_as_syntastic_checker = 1
-
-let g:ycm_enable_diagnostic_signs = 1
-let g:ycm_enable_diagnostic_highlighting = 0
-
-let g:ycm_always_populate_location_list = 1
-let g:ycm_open_loclist_on_ycm_diags = 1
-
-let g:ycm_complete_in_strings = 1
+let g:ycm_filetype_blacklist = {
+      \ 'vim'      : 1,
+      \ 'tagbar'   : 1,
+      \ 'qf'       : 1,
+      \ 'notes'    : 1,
+      \ 'markdown' : 1,
+      \ 'unite'    : 1,
+      \ 'text'     : 1,
+      \ 'vimwiki'  : 1,
+      \ 'pandoc'   : 1,
+      \ 'infolog'  : 1,
+      \ 'mail'     : 1
+      \}
 
 "++ FLAGS (Chromatica) +++++++++++++++++++++++++++++++++++++++++++++++++
 

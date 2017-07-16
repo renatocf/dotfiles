@@ -36,11 +36,6 @@ set textwidth=80          " 80 columns as maximum width
 set shiftwidth=0          " Make autoindent space equal to 'tabstop'
 set matchpairs+=<:>       " Also match < and > (for C++ mainly)
 
-"++ SEARCH +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-set diffopt=filler,iwhite " Ignore blang spaces
-set hlsearch              " highlight in search
-set incsearch             " Search while typing
-
 " Use better fonts for plugins
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 
@@ -64,23 +59,30 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
 " General-purpose plugins
-Plug 'AnsiEsc.vim'
+Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'nacitar/a.vim'
 Plug 'kylef/apiblueprint.vim'
 Plug 'viklund/bio-vim'
 Plug 'kien/ctrlp.vim'
+Plug 'mattn/emmet-vim'
+Plug 'haya14busa/incsearch.vim'
+Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
 Plug 'vim-syntastic/syntastic'
 Plug 'tomtom/tcomment_vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'ntpeters/vim-better-whitespace'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-fugitive'
 Plug 'dietsche/vim-lastplace'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'jceb/vim-orgmode'
 Plug 'in3d/vim-raml'
 Plug 'tpope/vim-surround'
+Plug 'cespare/vim-toml'
+Plug 'posva/vim-vue'
 
 " Filetype-specific plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
@@ -109,6 +111,9 @@ call plug#end()
 
 "++ FLAGS (YouCompleteMe) ++++++++++++++++++++++++++++++++++++++++++++++
 
+let g:ycm_always_populate_location_list = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+
 let g:ycm_filetype_blacklist = {
       \ 'vim'      : 1,
       \ 'tagbar'   : 1,
@@ -125,11 +130,19 @@ let g:ycm_filetype_blacklist = {
 
 "++ FLAGS (Chromatica) +++++++++++++++++++++++++++++++++++++++++++++++++
 
-let g:chromatica#enable_at_startup = 1
+" let g:chromatica#enable_at_startup = 1
 
 "++ FLAGS (Devicons) +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 let g:airline_powerline_fonts = 1
+
+"++ FLAGS (Incsearch) ++++++++++++++++++++++++++++++++++++++++++++++++++
+
+let g:incsearch#auto_nohlsearch = 1
+
+"++ FLAGS (JavaScript Libraries Syntax) ++++++++++++++++++++++++++++++++
+
+let g:used_javascript_libs = 'jquery,d3,angularjs,vue'
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
@@ -152,10 +165,25 @@ iab RuL ----+----1----+----2----+----3----+----4----+----5----+----6----+----7--
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 "++ File explorer: <F2>
-map <F2> :NERDTreeToggle<cr>
+map <F2> :NERDTreeToggle<CR>
+
+"++ Fix code: <F3>
+map <F3> :YcmCompleter FixIt<CR>
 
 "++ File explorer: <F4>
-map <F4> :TagbarToggle<cr>
+map <F4> :TagbarToggle<CR>
+
+"++ Incsearch plugin
+nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
 
 "++ Move lines: <A-*>
 nnoremap <C-k> :m .-2<CR>==

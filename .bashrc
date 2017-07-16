@@ -87,8 +87,8 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTIGNORE="clear":"cd ~":"cd ..":"cd -":"fg":"ls":"la":"ll":"l"
 
 # Editors
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=vim
+export VISUAL=vim
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

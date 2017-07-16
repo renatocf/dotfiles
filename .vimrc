@@ -19,6 +19,7 @@ endif
 set ruler                 " Put a ruler in the footer
 set title                 " Change the terminal title
 set number                " Add numbers in the lines
+set mouse=a               " Enable mouse usage
 set autowrite             " Save before commands that jump between files
 set backspace=2           " Make backspace act as in other programs
 set nocompatible          " Enable resources better than VI's

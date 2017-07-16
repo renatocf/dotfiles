@@ -22,12 +22,6 @@ alias sl='ls'
 # Jobs management
 alias jobs='jobs -l'
 
-# Vi/Vim/Neovim aliases
-if which nvim &> /dev/null; then
-    alias vim='nvim'
-fi
-alias vi='vim'
-
 # Enable default options of mkdir
 alias mkdir='mkdir -pv'
 

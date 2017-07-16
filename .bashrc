@@ -92,3 +92,9 @@ export VISUAL=vim
 
 # RVM
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+# NVM
+source /usr/share/nvm/init-nvm.sh
+
+# GVM
+[[ -s "/home/renatocf/.gvm/scripts/gvm" ]] && source "/home/renatocf/.gvm/scripts/gvm"

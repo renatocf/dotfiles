@@ -34,6 +34,10 @@ doc/tags
 ################
 *.sw*
 
+# Emacs temporary files #
+#########################
+*~
+
 # OS generated files #
 ######################
 .DS_Store

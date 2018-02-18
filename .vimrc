@@ -59,27 +59,32 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin('~/.vim/plugged')
 
 " General-purpose plugins
+Plug 'w0rp/ale'
 Plug 'vim-scripts/AnsiEsc.vim'
 Plug 'nacitar/a.vim'
 Plug 'kylef/apiblueprint.vim'
 Plug 'viklund/bio-vim'
-Plug 'kien/ctrlp.vim'
 Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
 Plug 'tomtom/tcomment_vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-fugitive'
 Plug 'dietsche/vim-lastplace'
+Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jceb/vim-orgmode'
 Plug 'in3d/vim-raml'
+Plug 'tpope/vim-repeat'
+Plug 'xolox/vim-session'
 Plug 'tpope/vim-surround'
 Plug 'cespare/vim-toml'
 Plug 'posva/vim-vue'
@@ -129,20 +134,20 @@ let g:ycm_filetype_blacklist = {
       \}
 
 "++ FLAGS (Chromatica) +++++++++++++++++++++++++++++++++++++++++++++++++
-
 " let g:chromatica#enable_at_startup = 1
 
 "++ FLAGS (Devicons) +++++++++++++++++++++++++++++++++++++++++++++++++++
-
 let g:airline_powerline_fonts = 1
 
 "++ FLAGS (Incsearch) ++++++++++++++++++++++++++++++++++++++++++++++++++
-
 let g:incsearch#auto_nohlsearch = 1
 
 "++ FLAGS (JavaScript Libraries Syntax) ++++++++++++++++++++++++++++++++
+let g:used_javascript_libs = 'jquery,d3,vue'
 
-let g:used_javascript_libs = 'jquery,d3,angularjs,vue'
+"++ FLAGS (Session) ++++++++++++++++++++++++++++++++++++++++++++++++++++
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------

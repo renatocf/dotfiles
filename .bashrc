@@ -90,11 +90,17 @@ export HISTIGNORE="clear":"cd ~":"cd ..":"cd -":"fg":"ls":"la":"ll":"l"
 export EDITOR=vim
 export VISUAL=vim
 
-# RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+# RBEnv
+export PATH="~/.rbenv/shims:$PATH"
 
 # NVM
-source /usr/share/nvm/init-nvm.sh
+[ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 
-# GVM
-[[ -s "/home/renatocf/.gvm/scripts/gvm" ]] && source "/home/renatocf/.gvm/scripts/gvm"
+# FZF
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Set GPG TTY
+export GPG_TTY=$(tty)
+
+# Refresh gpg-agent tty in case user switches into an X session
+gpg-connect-agent updatestartuptty /bye >/dev/null

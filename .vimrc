@@ -152,6 +152,9 @@ let g:used_javascript_libs = 'jquery,d3,vue'
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
 
+"++ FLAGS (ALE) ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+let g:ale_echo_msg_format = '%severity%(%linter%): %s'
+
 "++ FLAGS (Local vimrc) ++++++++++++++++++++++++++++++++++++++++++++++++
 let g:localvimrc_ask = 0
 

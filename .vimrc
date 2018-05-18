@@ -58,6 +58,9 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " Check interesting stuff at http://vimawesome.com/
 call plug#begin('~/.vim/plugged')
 
+" Local vimrc
+Plug 'embear/vim-localvimrc'
+
 " General-purpose plugins
 Plug 'w0rp/ale'
 Plug 'vim-scripts/AnsiEsc.vim'
@@ -148,6 +151,9 @@ let g:used_javascript_libs = 'jquery,d3,vue'
 "++ FLAGS (Session) ++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
+
+"++ FLAGS (Local vimrc) ++++++++++++++++++++++++++++++++++++++++++++++++
+let g:localvimrc_ask = 0
 
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
@@ -245,5 +251,5 @@ if has('nvim')
     tnoremap <A-Right> <C-\><C-n><C-w>l
 
     " Fix to enter a terminal buffer in terminal mode
-    autocmd WinEnter * if &buftype ==# 'terminal' | startinsert | endif
+    autocmd BufEnter * if &buftype == 'terminal' | startinsert | endif
 endif

@@ -134,6 +134,11 @@ let g:ycm_filetype_blacklist = {
       \ 'mail'     : 1
       \}
 
+"++ FLAGS (ALE) ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 1
+let g:ale_echo_msg_format = '%severity%(%linter%): %s'
+
 "++ FLAGS (Chromatica) +++++++++++++++++++++++++++++++++++++++++++++++++
 " let g:chromatica#enable_at_startup = 1
 
@@ -149,9 +154,6 @@ let g:used_javascript_libs = 'jquery,d3,vue'
 "++ FLAGS (Session) ++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'
-
-"++ FLAGS (ALE) ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-let g:ale_echo_msg_format = '%severity%(%linter%): %s'
 
 "++ FLAGS (Local vimrc) ++++++++++++++++++++++++++++++++++++++++++++++++
 let g:localvimrc_ask = 0

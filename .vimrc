@@ -90,6 +90,7 @@ Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'in3d/vim-raml', { 'for': 'raml' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'posva/vim-vue', { 'for': 'vue' }
 
 " Clang-dependent plugins
 Plug 'valloric/youcompleteme', {

@@ -39,10 +39,6 @@ set matchpairs+=<:>       " Also match < and > (for C++ mainly)
 " Use better fonts for plugins
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 
-" Set special colors for incremental/normal search
-hi    Search ctermbg=green ctermfg=black
-hi IncSearch ctermbg=black ctermfg=cyan
-
 "///////////////////////////////////////////////////////////////////////
 "----------------------------------------------------------------------
 "                              PLUGINS

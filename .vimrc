@@ -58,10 +58,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'embear/vim-localvimrc'
 
 " General-purpose plugins
+Plug 'nacitar/a.vim'
 Plug 'w0rp/ale'
 Plug 'vim-scripts/AnsiEsc.vim'
-Plug 'nacitar/a.vim'
-Plug 'kylef/apiblueprint.vim'
 Plug 'viklund/bio-vim'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -81,16 +80,16 @@ Plug 'dietsche/vim-lastplace'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'jceb/vim-orgmode'
-Plug 'in3d/vim-raml'
 Plug 'tpope/vim-repeat'
 Plug 'xolox/vim-session'
 Plug 'tpope/vim-surround'
-Plug 'cespare/vim-toml'
-Plug 'posva/vim-vue'
 
 " Filetype-specific plugins
+Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'in3d/vim-raml', { 'for': 'raml' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
 
 " Clang-dependent plugins
 Plug 'valloric/youcompleteme', {

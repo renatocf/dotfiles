@@ -93,6 +93,9 @@ export VISUAL=vim
 # RBEnv
 export PATH="~/.rbenv/shims:$PATH"
 
+# Yarn
+export PATH="~/.yarn/bin:$PATH"
+
 # NVM
 [ -f /usr/share/nvm/init-nvm.sh ] && source /usr/share/nvm/init-nvm.sh
 

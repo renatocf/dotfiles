@@ -20,11 +20,17 @@ set ruler                 " Put a ruler in the footer
 set title                 " Change the terminal title
 set number                " Add numbers in the lines
 set mouse=a               " Enable mouse usage
+set undofile              " Persistent undo
 set autowrite             " Save before commands that jump between files
+set lazyredraw            " Do not redraw screen in the middle of macros
 set backspace=2           " Make backspace act as in other programs
 set nocompatible          " Enable resources better than VI's
 set encoding=utf8         " Use UTF-8 as the default encoding
 set background=dark       " Set dark background by default
+
+if has('nvim')
+  set inccommand=nosplit    " Realtime changes for ex commands
+endif
 
 "++ IDENTATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 filetype plugin indent on " Enable Identation for different languages
@@ -71,11 +77,16 @@ Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tcomment_vim'
 Plug 'leafgarland/typescript-vim'
+Plug 'mbbill/undotree'
 Plug 'tpope/vim-abolish'
 Plug 'vim-airline/vim-airline'
 Plug 'ntpeters/vim-better-whitespace'
+Plug 'nicwest/vim-camelsnek'
+Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-fugitive'
+Plug 'jparise/vim-graphql'
+Plug 'pangloss/vim-javascript'
 Plug 'dietsche/vim-lastplace'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
@@ -86,7 +97,6 @@ Plug 'tpope/vim-surround'
 
 " Filetype-specific plugins
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'in3d/vim-raml', { 'for': 'raml' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
@@ -187,6 +197,9 @@ map <F3> :YcmCompleter FixIt<CR>
 "++ File explorer: <F4>
 map <F4> :TagbarToggle<CR>
 
+"++ Undo tree: <F5>
+map <F4> :UndotreeToggle<CR>
+
 "++ Incsearch plugin
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 map /  <Plug>(incsearch-forward)
@@ -244,15 +257,15 @@ vnoremap <A-Left> <Esc><C-w>h
 vnoremap <A-Right> <Esc><C-w>l
 
 if has('nvim')
-    tnoremap <A-k> <C-\><C-n><C-w>k
-    tnoremap <A-j> <C-\><C-n><C-w>j
-    tnoremap <A-h> <C-\><C-n><C-w>h
-    tnoremap <A-l> <C-\><C-n><C-w>l
-    tnoremap <A-Up> <C-\><C-n><C-w>k
-    tnoremap <A-Down> <C-\><C-n><C-w>j
-    tnoremap <A-Left> <C-\><C-n><C-w>h
-    tnoremap <A-Right> <C-\><C-n><C-w>l
+  tnoremap <A-k> <C-\><C-n><C-w>k
+  tnoremap <A-j> <C-\><C-n><C-w>j
+  tnoremap <A-h> <C-\><C-n><C-w>h
+  tnoremap <A-l> <C-\><C-n><C-w>l
+  tnoremap <A-Up> <C-\><C-n><C-w>k
+  tnoremap <A-Down> <C-\><C-n><C-w>j
+  tnoremap <A-Left> <C-\><C-n><C-w>h
+  tnoremap <A-Right> <C-\><C-n><C-w>l
 
-    " Fix to enter a terminal buffer in terminal mode
-    autocmd BufEnter * if &buftype == 'terminal' | startinsert | endif
+  " Fix to enter a terminal buffer in terminal mode
+  autocmd BufEnter * if &buftype == 'terminal' | startinsert | endif
 endif

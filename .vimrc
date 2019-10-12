@@ -27,7 +27,9 @@ set updatetime=300        " Smaller updatetime for CursorHold
 set background=dark       " Set dark background by default
 
 if has('nvim')
-  set inccommand=nosplit    " Realtime changes for ex commands
+  set inccommand=nosplit " Realtime changes for ex commands
+  autocmd TermEnter * set nonumber " No numbers in terminal mode
+  autocmd TermLeave * set number " Numbers out of terminal mode
 endif
 
 "++ IDENTATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++

@@ -4,15 +4,10 @@
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-"++ DEBIAN +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-" This line should not be removed to guarantee that many options are
-" appropriately selected to work with Vim packages available in Debian
-runtime! debian.vim
-
 "++ SYNTAX HIGHLIGHTING ++++++++++++++++++++++++++++++++++++++++++++++++
 " This line enables syntax highlighting
 if has('syntax')
-    syntax on
+  syntax on
 endif
 
 "++ BASIC OPTIONS ++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -52,9 +47,6 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
 "++ INSTALLATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-" Set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
 
 " Start list of plugins
 " Check interesting stuff at http://vimawesome.com/

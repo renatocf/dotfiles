@@ -115,6 +115,10 @@ Plug 'ryanoasis/vim-devicons'
 " End list of plugins
 call plug#end()
 
+"++ FLAGS (NVIM) +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+let g:terminal_scrollback_buffer_size = 16384
+
 "++ FLAGS (YouCompleteMe) ++++++++++++++++++++++++++++++++++++++++++++++
 
 let g:ycm_confirm_extra_conf = 0

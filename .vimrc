@@ -186,7 +186,7 @@ map <F3> :YcmCompleter FixIt<CR>
 map <F4> :TagbarToggle<CR>
 
 "++ Undo tree: <F5>
-map <F4> :UndotreeToggle<CR>
+map <F5> :UndotreeToggle<CR>
 
 "++ Incsearch plugin
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>

@@ -61,6 +61,7 @@ Plug 'embear/vim-localvimrc'
 " General-purpose plugins
 Plug 'nacitar/a.vim'
 Plug 'vim-scripts/AnsiEsc.vim'
+Plug 'vim-scripts/DoxyGen-Syntax'
 Plug 'viklund/bio-vim'
 Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }

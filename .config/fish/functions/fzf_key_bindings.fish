@@ -1,0 +1,1 @@
+/home/renatocf/.fzf/shell/key-bindings.fish

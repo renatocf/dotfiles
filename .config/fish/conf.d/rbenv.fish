@@ -1,0 +1,1 @@
+/home/renatocf/.config/fisherman/rbenv/conf.d/rbenv.fish

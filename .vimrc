@@ -190,6 +190,19 @@ map <F4> :TagbarToggle<CR>
 "++ Undo tree: <F5>
 map <F5> :UndotreeToggle<CR>
 
+if has('nvim')
+  "++ Open IDE mode: <F6>
+  map <F6> :NERDTreeToggle<CR><A-Right>:vs<CR><A-Right>:sp<CR>:term<CR><A-Down>:term<CR><A-Left><CR>
+
+  "++ Open Side Terminal: <F7>
+  command Vst :vs | :normal <A-Right> | :term<Cr>i
+  map <F7> :Vst<Cr>
+
+  "++ Open Low Terminal: <F8>
+  command Spt :sp | :normal <A-Down> | :resize 12 | :term<CR>i
+  map <F8> :Spt<Cr>
+endif
+
 "++ Incsearch plugin
 nnoremap <Esc><Esc> :<C-u>nohlsearch<CR>
 map /  <Plug>(incsearch-forward)

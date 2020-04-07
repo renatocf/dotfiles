@@ -25,6 +25,7 @@ set nocompatible          " Enable resources better than VI's
 set encoding=utf8         " Use UTF-8 as the default encoding
 set updatetime=300        " Smaller updatetime for CursorHold
 set background=dark       " Set dark background by default
+set clipboard=unnamedplus " Allow copying to system clipboard
 
 if has('nvim')
   set inccommand=nosplit " Realtime changes for ex commands

@@ -29,8 +29,7 @@ set clipboard=unnamedplus " Allow copying to system clipboard
 
 if has('nvim')
   set inccommand=nosplit " Realtime changes for ex commands
-  autocmd TermEnter * set nonumber " No numbers in terminal mode
-  autocmd TermLeave * set number " Numbers out of terminal mode
+  autocmd TermOpen * setlocal nonumber
 endif
 
 "++ IDENTATION +++++++++++++++++++++++++++++++++++++++++++++++++++++++++

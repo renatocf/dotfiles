@@ -213,11 +213,11 @@ if has('nvim')
   map <F6> :NERDTreeToggle<CR><A-Right>:vs<CR><A-Right>:sp<CR>:term<CR><A-Down>:term<CR><A-Left><CR>
 
   "++ Open Side Terminal: <F7>
-  command Vst :vs | :normal <A-Right> | :term<Cr>
+  command! Vst :vs | :normal <A-Right> | :term<Cr>
   map <F7> :Vst<Cr>
 
   "++ Open Low Terminal: <F8>
-  command Spt :sp | :normal <A-Down> | :resize 12 | :term<CR>
+  command! Spt :sp | :normal <A-Down> | :resize 12 | :term<CR>
   map <F8> :Spt<Cr>
 endif
 

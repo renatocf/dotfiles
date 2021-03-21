@@ -1,6 +1,7 @@
 [user]
   name = Renato Cordeiro Ferreira
   email = renato.cferreira@hotmail.com
+  signinkey = "286F5EC46A617451"
 [credential]
   helper = cache
 [core]
@@ -18,6 +19,8 @@
 [branch "master"]
   remote = origin
   merge = refs/heads/master
+[commit]
+  gpgsign = true
 
 ; Some nice alias
 [alias]

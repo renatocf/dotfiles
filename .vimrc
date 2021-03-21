@@ -42,6 +42,13 @@ set textwidth=80          " 80 columns as maximum width
 set shiftwidth=0          " Make autoindent space equal to 'tabstop'
 set matchpairs+=<:>       " Also match < and > (for C++ mainly)
 
+"++ COLORS +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+set cursorline
+
+if has('termguicolors')
+  set termguicolors
+endif
+
 " Use better fonts for plugins
 set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 
@@ -93,6 +100,10 @@ Plug 'tpope/vim-repeat'
 Plug 'xolox/vim-session'
 Plug 'tpope/vim-surround'
 
+" Colors schemes
+" Plug 'flazz/vim-colorschemes'
+Plug 'chriskempson/base16-vim'
+
 " Filetype-specific plugins
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
 Plug 'in3d/vim-raml', { 'for': 'raml' }
@@ -117,6 +128,12 @@ Plug 'ryanoasis/vim-devicons'
 
 " End list of plugins
 call plug#end()
+
+"++ FLAGS (BASE16) +++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+colorscheme base16-classic-dark
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
 
 "++ FLAGS (NVIM) +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
@@ -375,7 +392,7 @@ command! -nargs=0 OR :call CocAction('runCommand', 'editor.action.organizeImport
 
 " Add diagnostic info for https://github.com/itchyny/lightline.vim
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'powerline',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'cocstatus', 'readonly', 'filename', 'modified' ] ]

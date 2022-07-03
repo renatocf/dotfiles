@@ -134,7 +134,15 @@ call plug#end()
 "++ FLAGS (BASE16) +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 " source ~/.config/nvim/colorscheme.vim
-colorscheme base16-bright
+if exists('$BASE16_THEME')
+    \ && (!exists('g:colors_name')
+    \ || g:colors_name != 'base16-$BASE16_THEME')
+  let base16colorspace=256
+  colorscheme base16-$BASE16_THEME
+else
+  colorscheme base16-bright
+endif
+
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 

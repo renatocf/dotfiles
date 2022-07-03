@@ -104,8 +104,7 @@ Plug 'xolox/vim-session'
 Plug 'tpope/vim-surround'
 
 " Colors schemes
-" Plug 'flazz/vim-colorschemes'
-Plug 'fnune/base16-vim'
+Plug 'base16-project/base16-vim'
 
 " Filetype-specific plugins
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }

@@ -301,6 +301,28 @@ endif
 "----------------------------------------------------------------------
 "\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+" Add default list of extensions
+let g:coc_global_extensions = [
+      \ "coc-lists",
+      \ "coc-html",
+      \ "coc-highlight",
+      \ "coc-emmet",
+      \ "coc-yaml",
+      \ "coc-xml",
+      \ "coc-vimlsp",
+      \ "coc-vetur",
+      \ "coc-tailwind-intellisense",
+      \ "coc-svg",
+      \ "coc-svelte",
+      \ "coc-stylelint",
+      \ "coc-metals",
+      \ "coc-kotlin",
+      \ "coc-json",
+      \ "coc-elixir",
+      \ "coc-css",
+      \ "coc-jedi",
+      \ ]
+
 " don't give |ins-completion-menu| messages.
 set shortmess+=c
 

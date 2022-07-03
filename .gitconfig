@@ -6,7 +6,6 @@
   helper = cache
 [core]
   excludesfile = ~/.gitignore_global
-  pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
   tool = vimdiff
 [difftool]
@@ -65,6 +64,20 @@
   newNormal = green bold
   newHighlight = green bold 22
 
+; Diffs
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+[delta]
+  plus-style = "syntax #012800"
+  minus-style = "syntax #340001"
+  navigate = true
+[interactive]
+  diffFilter = delta --color-only
+
+; Notebooks
 [diff "jupyternotebook"]
   command = git-nbdiffdriver diff
 [merge "jupyternotebook"]

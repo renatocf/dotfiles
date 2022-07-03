@@ -318,7 +318,6 @@ let g:coc_global_extensions = [
       \ "coc-xml",
       \ "coc-vimlsp",
       \ "coc-vetur",
-      \ "coc-tailwind-intellisense",
       \ "coc-svg",
       \ "coc-svelte",
       \ "coc-stylelint",

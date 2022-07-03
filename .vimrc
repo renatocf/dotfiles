@@ -105,7 +105,7 @@ Plug 'tpope/vim-surround'
 
 " Colors schemes
 " Plug 'flazz/vim-colorschemes'
-Plug 'chriskempson/base16-vim'
+Plug 'fnune/base16-vim'
 
 " Filetype-specific plugins
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
@@ -134,7 +134,8 @@ call plug#end()
 
 "++ FLAGS (BASE16) +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-colorscheme base16-classic-dark
+" source ~/.config/nvim/colorscheme.vim
+colorscheme base16-bright
 hi Normal guibg=NONE ctermbg=NONE
 hi LineNr guibg=NONE ctermbg=NONE
 

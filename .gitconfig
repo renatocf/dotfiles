@@ -6,6 +6,7 @@
   helper = cache
 [core]
   excludesfile = ~/.gitignore_global
+  # pager = diff-so-fancy | less --tabs=4 -RFX
 [diff]
   tool = vimdiff
 [difftool]
@@ -87,3 +88,5 @@
   cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
 [mergetool "nbdime"]
   cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[init]
+	defaultBranch = main

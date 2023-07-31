@@ -155,27 +155,6 @@ hi LineNr guibg=NONE ctermbg=NONE
 
 let g:terminal_scrollback_buffer_size = 16384
 
-"++ FLAGS (YouCompleteMe) ++++++++++++++++++++++++++++++++++++++++++++++
-
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_always_populate_location_list = 1
-let g:ycm_collect_identifiers_from_tags_files = 1
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-let g:ycm_filetype_blacklist = {
-      \ 'vim'      : 1,
-      \ 'tagbar'   : 1,
-      \ 'qf'       : 1,
-      \ 'notes'    : 1,
-      \ 'markdown' : 1,
-      \ 'unite'    : 1,
-      \ 'text'     : 1,
-      \ 'vimwiki'  : 1,
-      \ 'pandoc'   : 1,
-      \ 'infolog'  : 1,
-      \ 'mail'     : 1
-      \}
-
 "++ FLAGS (Devicons) +++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:airline_powerline_fonts = 1
 

@@ -70,18 +70,13 @@ Plug 'embear/vim-localvimrc'
 " General-purpose plugins
 Plug 'nacitar/a.vim'
 Plug 'vim-scripts/AnsiEsc.vim'
-Plug 'vim-scripts/DoxyGen-Syntax'
 Plug 'viklund/bio-vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'mattn/emmet-vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'haya14busa/incsearch.vim'
-Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'udalov/kotlin-vim'
-Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'majutsushi/tagbar'
 Plug 'tomtom/tcomment_vim'
 Plug 'leafgarland/typescript-vim'
@@ -93,8 +88,6 @@ Plug 'nicwest/vim-camelsnek'
 Plug 'kristijanhusak/vim-carbon-now-sh'
 Plug 'dkprice/vim-easygrep'
 Plug 'tpope/vim-fugitive'
-Plug 'jparise/vim-graphql'
-Plug 'pangloss/vim-javascript'
 Plug 'dietsche/vim-lastplace'
 Plug 'xolox/vim-misc'
 Plug 'terryma/vim-multiple-cursors'
@@ -103,13 +96,25 @@ Plug 'tpope/vim-repeat'
 Plug 'xolox/vim-session'
 Plug 'tpope/vim-surround'
 
+" NERDTree and plugins
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
 " Colors schemes
 Plug 'base16-project/base16-vim'
 
 " Filetype-specific plugins
+Plug 'othree/html5.vim'
+Plug 'vim-scripts/DoxyGen-Syntax'
 Plug 'kylef/apiblueprint.vim', { 'for': 'apiblueprint' }
+Plug 'udalov/kotlin-vim', { 'for': 'kotlin' }
+Plug 'jparise/vim-graphql', { 'for': 'graphql' }
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'in3d/vim-raml', { 'for': 'raml' }
 Plug 'tpope/vim-rails', { 'for': 'ruby' }
+Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
 Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'posva/vim-vue', { 'for': 'vue' }
 

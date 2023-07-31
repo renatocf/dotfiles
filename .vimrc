@@ -313,7 +313,8 @@ let g:coc_global_extensions = [
       \ "coc-json",
       \ "coc-elixir",
       \ "coc-css",
-      \ "coc-jedi",
+      \ "coc-python",
+      \ "coc-snippets",
       \ ]
 
 " don't give |ins-completion-menu| messages.

@@ -164,6 +164,9 @@ let g:incsearch#auto_nohlsearch = 1
 "++ FLAGS (JavaScript Libraries Syntax) ++++++++++++++++++++++++++++++++
 let g:used_javascript_libs = 'jquery,d3,vue'
 
+"++ FLAGS (NERDTree) +++++++++++++++++++++++++++++++++++++++++++++++++++
+let NERDTreeIgnore = ['__pycache__','\.pyc$']
+
 "++ FLAGS (Session) ++++++++++++++++++++++++++++++++++++++++++++++++++++
 let g:session_autosave = 'yes'
 let g:session_autoload = 'yes'

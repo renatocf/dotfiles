@@ -1,10 +1,9 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
-SETUVAR --export AWS_PROFILE:Elo7LegacyDev
-SETUVAR --export BAT_DEFAULT_THEME:base16
 SETUVAR --export BAT_THEME:base16
-SETUVAR --export VAULT_PKI_ROLE:team\x2dleaders
-SETUVAR Z_DATA_DIR:/home/renatocf/\x2elocal/share/z
+SETUVAR --export DELTA_THEME:base16
+SETUVAR --export EDITOR:vim
+SETUVAR --export VISUAL:vim
 SETUVAR __fish_classic_git_prompt_initialized:\x1d
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d

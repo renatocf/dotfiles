@@ -72,9 +72,9 @@
   reflog = delta
   show = delta
 [delta]
-  plus-style = "syntax #012800"
-  minus-style = "syntax #340001"
   navigate = true
+  dark = true
+  theme = base16-256
 [interactive]
   diffFilter = delta --color-only
 

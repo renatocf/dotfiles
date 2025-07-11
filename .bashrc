@@ -101,9 +101,3 @@ export PATH="~/.yarn/bin:$PATH"
 
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-# Set GPG TTY
-export GPG_TTY=$(tty)
-
-# Refresh gpg-agent tty in case user switches into an X session
-gpg-connect-agent updatestartuptty /bye >/dev/null

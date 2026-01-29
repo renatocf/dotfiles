@@ -1,7 +1,7 @@
 [user]
   name = Renato Cordeiro Ferreira
-  email = renato.cferreira@hotmail.com
-  signinkey = "286F5EC46A617451"
+  email = git@renatocf.com
+  signinkey = "8757E3D75224288C"
 [credential]
   helper = cache
 [core]

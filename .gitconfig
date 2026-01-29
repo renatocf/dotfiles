@@ -6,7 +6,14 @@
   helper = cache
 [core]
   excludesfile = ~/.gitignore_global
-  # pager = diff-so-fancy | less --tabs=4 -RFX
+  autocrlf = false
+  editor = vim
+[init]
+  defaultBranch = main
+[branch]
+  sort = -committerdate
+[push]
+  autoSetupRemote = true
 [diff]
   tool = vimdiff
 [difftool]

@@ -76,12 +76,9 @@
   newNormal = green bold
   newHighlight = green bold 22
 
-; Diffs
-[pager]
-  diff = delta
-  log = delta
-  reflog = delta
-  show = delta
+; Delta
+[core]
+  pager = delta
 [delta]
   navigate = true
   dark = true

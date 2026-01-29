@@ -15,12 +15,12 @@
 [push]
   autoSetupRemote = true
 [diff]
-  tool = vimdiff
-[difftool]
-  prompt = false
+  algorithm = histogram
+  colorMoved = default
 [merge]
   stat = true
   tool = vimdiff
+  conflictStyle = zdiff3
 [mergetool]
   prompt = false
 [branch "master"]

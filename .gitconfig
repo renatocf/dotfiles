@@ -25,6 +25,11 @@
   prompt = false
 [commit]
   gpgsign = true
+  verbose = true
+[tag]
+  gpgsign = true
+[log]
+  showSignature = true
 
 ; Some nice alias
 [alias]
